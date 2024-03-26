@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LogDay" load_steps=2 format=3 uid="uid://deksawgwpeb5g"]
+
+[ext_resource type="Script" path="res://Data/Log/LogDay.cs" id="1_ejviu"]
+
+[resource]
+script = ExtResource("1_ejviu")
+EngineerLog = ""
+TeacherLog = ""
+ButcherLog = ""
+OccultistLog = ""

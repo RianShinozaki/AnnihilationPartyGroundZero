@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://k8rwx7o3go0e"]
+
+[ext_resource type="Texture2D" uid="uid://c5fk27f4oevx1" path="res://Art Assets/Textbox.png" id="1_86u3a"]
+[ext_resource type="Script" path="res://Scripts/System/textbox_system.cs" id="1_y2i8b"]
+[ext_resource type="PackedScene" uid="uid://bstrfkdu5ivds" path="res://Objects/System/Dialogue/response.tscn" id="2_8t2sx"]
+[ext_resource type="Theme" uid="uid://dab07dflhwun4" path="res://Font/Textbox.tres" id="2_n4sfx"]
+[ext_resource type="AudioStream" uid="uid://bomnlh0ubyx80" path="res://Audio/Talk.wav" id="5_d5dtl"]
+
+[node name="TextboxSystem" type="Control" node_paths=PackedStringArray("ResponseGroup", "talkSound")]
+z_index = 500
+layout_mode = 3
+anchors_preset = 0
+offset_top = 57.0
+offset_right = 40.0
+offset_bottom = 97.0
+script = ExtResource("1_y2i8b")
+ResponseGroup = NodePath("Container/Responses/Vertical Group")
+ResponseButton = ExtResource("2_8t2sx")
+talkSound = NodePath("AudioStreamPlayer")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = 396.0
+offset_right = 1020.0
+offset_bottom = 596.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 28)
+mouse_filter = 2
+texture = ExtResource("1_86u3a")
+
+[node name="NextButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 566.0
+offset_right = 1155.0
+offset_bottom = 635.0
+mouse_filter = 1
+theme = ExtResource("2_n4sfx")
+text = "Next"
+
+[node name="Container" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 436.0
+offset_right = 1040.0
+offset_bottom = 636.0
+
+[node name="Dialogue" type="RichTextLabel" parent="Container"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 780.0
+offset_bottom = 180.0
+theme = ExtResource("2_n4sfx")
+text = "Test textbox there is dialogue here lots of words and stuff and i wonder what'll happen when it runs out of space "
+
+[node name="Responses" type="ScrollContainer" parent="Container"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 785.0
+offset_bottom = 189.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Vertical Group" type="VBoxContainer" parent="Container/Responses"]
+layout_mode = 2
+
+[node name="Response" parent="Container/Responses/Vertical Group" instance=ExtResource("2_8t2sx")]
+visible = false
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d5dtl")
+pitch_scale = 0.97
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

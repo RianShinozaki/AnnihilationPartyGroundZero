@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://cxpdjiqcyd31x"
+path="res://.godot/imported/ButcherShop.aseprite-af6635b5232af3ef8d17092e0545a24f.res"
+
+[deps]
+
+source_file="res://Art Assets/ButcherShop.aseprite"
+dest_files=["res://.godot/imported/ButcherShop.aseprite-af6635b5232af3ef8d17092e0545a24f.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

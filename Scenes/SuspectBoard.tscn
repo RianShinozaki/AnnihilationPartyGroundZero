@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7ciicikyr5s2"]
+
+[ext_resource type="Texture2D" uid="uid://c0b7dxgbx0mt4" path="res://Art Assets/Board.png" id="1_46h16"]
+[ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_gc7ut"]
+[ext_resource type="Script" path="res://Scripts/Objects/Environment/SuspectPhoto.cs" id="4_gcqtr"]
+[ext_resource type="Texture2D" uid="uid://evexanvo4noa" path="res://Art Assets/FrameHelper.png" id="5_e8pn7"]
+[ext_resource type="Texture2D" uid="uid://uj1nro4j7ujp" path="res://Art Assets/ReturnArrow.png" id="5_gxrli"]
+[ext_resource type="Theme" uid="uid://1jok35302t31" path="res://Font/UI.tres" id="5_u30ba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgn2v"]
+size = Vector2(180, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn217"]
+size = Vector2(82, 98)
+
+[node name="Board" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_46h16")
+centered = false
+
+[node name="Frame" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -4)
+scale = Vector2(4, 4)
+texture = ExtResource("5_e8pn7")
+centered = false
+
+[node name="ReturnButton" type="Area2D" parent="."]
+position = Vector2(88, 97)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_gcqtr")
+goToScene = "res://Scenes/office.tscn"
+tooltip = "Return to Office"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReturnButton"]
+position = Vector2(49, -10)
+shape = SubResource("RectangleShape2D_cgn2v")
+
+[node name="TextureRect" type="TextureRect" parent="ReturnButton/CollisionShape2D"]
+offset_left = -40.0
+offset_top = -18.0
+offset_right = 24.0
+offset_bottom = 46.0
+texture = ExtResource("5_gxrli")
+
+[node name="Label" type="Label" parent="ReturnButton/CollisionShape2D"]
+offset_left = -56.0
+offset_top = -51.0
+offset_right = 58.0
+offset_bottom = 54.0
+theme = ExtResource("5_u30ba")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+text = "RETURN"
+
+[node name="TeacherPhoto" type="Area2D" parent="."]
+position = Vector2(-183, 127)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_gcqtr")
+myLocation = 2
+goToScene = "res://Scenes/teacher.tscn"
+tooltip = "Teacher"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeacherPhoto"]
+position = Vector2(559, 169)
+shape = SubResource("RectangleShape2D_pn217")
+
+[node name="EngineerPhoto" type="Area2D" parent="."]
+position = Vector2(-65, 292)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_gcqtr")
+myLocation = 2
+goToScene = "res://Scenes/engineer.tscn"
+tooltip = "Engineer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EngineerPhoto"]
+position = Vector2(559, 169)
+shape = SubResource("RectangleShape2D_pn217")
+
+[node name="ButcherPhoto" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_gcqtr")
+myLocation = 1
+goToScene = "res://Scenes/butcher.tscn"
+tooltip = "Butcher"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButcherPhoto"]
+position = Vector2(559, 169)
+shape = SubResource("RectangleShape2D_pn217")
+
+[node name="OccultistPhoto" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_gcqtr")
+myLocation = 1
+goToScene = "res://Scenes/occultist.tscn"
+tooltip = "Occultist"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OccultistPhoto"]
+position = Vector2(790, 247)
+shape = SubResource("RectangleShape2D_pn217")
+
+[node name="Pointer" parent="." instance=ExtResource("4_gc7ut")]
+modulate = Color(1, 0, 1, 1)
