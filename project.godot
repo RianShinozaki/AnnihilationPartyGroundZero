@@ -40,7 +40,7 @@ project/assembly_name="AberDetective"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray()
 
 [importer_defaults]
 
