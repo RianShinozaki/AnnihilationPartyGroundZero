@@ -40,7 +40,7 @@ project/assembly_name="AberDetective"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg")
 
 [importer_defaults]
 
