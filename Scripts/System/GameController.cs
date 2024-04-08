@@ -115,7 +115,7 @@ public partial class GameController : Node
     {
         base._Ready();
         wishSplitX = 215;
-        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://TitleScreen.tscn");
+        //GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://TitleScreen.tscn");
         Instance = this;
 
         for(int i = 0; i < trustLevels.Length; i++) {

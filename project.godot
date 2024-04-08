@@ -30,6 +30,7 @@ window/size/viewport_height=720
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://Art Assets/Pointer.png"
 mouse_cursor/custom_image_hotspot=Vector2(34, 34)
 mouse_cursor/tooltip_position_offset=Vector2(0, 0)
@@ -40,7 +41,7 @@ project/assembly_name="AberDetective"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/calendar_system/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg")
 
 [importer_defaults]
 

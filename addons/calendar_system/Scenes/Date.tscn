@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtwsws7icmeg0"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Scripts/Date.cs" id="1_r1or0"]
+
+[node name="DialogueNode" type="Control"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r1or0")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Day" type="Label" parent="Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 135.0
+offset_bottom = 27.0
+text = "01"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+offset_left = 10.0
+offset_top = 37.0
+offset_right = 126.0
+offset_bottom = 68.0
+
+[node name="Move" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Move
+"
+
+[node name="Edit" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Edit"
+
+[connection signal="button_down" from="Panel/HBoxContainer/Move" to="." method="_on_move_button_down"]
+[connection signal="button_up" from="Panel/HBoxContainer/Move" to="." method="_on_move_button_up"]
