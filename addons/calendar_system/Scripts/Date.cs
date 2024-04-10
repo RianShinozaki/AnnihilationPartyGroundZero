@@ -4,13 +4,15 @@ using System;
 [Tool]
 public partial class Date : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	public DateInformation myInformation;
+	public int day;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public override void _Ready()
+    {
+        base._Ready();
+		  myInformation = GD.Load<DateInformation>(CalendarController.Instance.resourcePath + "/Day" + day.ToString() + ".tres");
+    }
+    private void _on_edit_pressed() {
+      EditorInterface.Singleton.InspectObject(myInformation);
+    }
 }

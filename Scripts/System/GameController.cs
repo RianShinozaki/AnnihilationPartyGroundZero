@@ -1,7 +1,22 @@
 using Godot;
 using System;
 
-
+public enum DayOfWeek {
+	Sunday,
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday
+}
+public enum Suspects {
+    Engineer,
+    Occultist,
+    Teacher,
+    Butcher,
+    COUNT
+}
 
 public partial class GameController : Node
 {

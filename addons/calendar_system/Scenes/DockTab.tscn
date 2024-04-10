@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://btyhhtdye2qku"]
 
-[ext_resource type="Script" path="res://addons/junkbook/Scripts/DialogueNode/DialogueNode.cs" id="1_0h8by"]
 [ext_resource type="Script" path="res://addons/calendar_system/Scripts/CalendarController.cs" id="1_j1lpr"]
 [ext_resource type="Script" path="res://addons/calendar_system/Scripts/PopulateDates.cs" id="1_xqqqp"]
 [ext_resource type="Theme" uid="uid://b7mxau107fhc3" path="res://addons/calendar_system/calendar.tres" id="3_tco1l"]
+[ext_resource type="Script" path="res://addons/calendar_system/Scripts/CalendarDateInspector.cs" id="4_m4ull"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -57,8 +57,183 @@ file_mode = 2
 
 [node name="LoadFailDialog" type="AcceptDialog" parent="CalendarSystem/OptionsGroup"]
 size = Vector2i(259, 100)
-visible = true
 dialog_text = "Folder is invalid and nonempty."
+
+[node name="Window" type="AcceptDialog" parent="CalendarSystem/OptionsGroup"]
+title = "Calendar Setup"
+initial_position = 2
+size = Vector2i(300, 200)
+
+[node name="PopupMenu" type="MenuButton" parent="CalendarSystem/OptionsGroup/Window"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 151.0
+text = "Click to set day 1"
+item_count = 7
+popup/item_0/text = "Sunday"
+popup/item_0/id = 0
+popup/item_1/text = "Monday"
+popup/item_1/id = 1
+popup/item_2/text = "Tuesday"
+popup/item_2/id = 2
+popup/item_3/text = "Wednesday"
+popup/item_3/id = 3
+popup/item_4/text = "Thursday"
+popup/item_4/id = 4
+popup/item_5/text = "Friday"
+popup/item_5/id = 5
+popup/item_6/text = "Saturday"
+popup/item_6/id = 6
+
+[node name="Button" type="Button" parent="CalendarSystem/OptionsGroup"]
+layout_mode = 2
+text = "Save"
+
+[node name="DayOfWeek" type="GridContainer" parent="CalendarSystem"]
+custom_minimum_size = Vector2(1000, 40)
+layout_mode = 2
+columns = 7
+
+[node name="Sunday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Sunday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Sunday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "SUNDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Monday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Monday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Monday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "MONDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tuesday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Tuesday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Tuesday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "TUESDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wednesday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Wednesday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Wednesday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "WEDNESDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thursday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Thursday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Thursday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "THURSDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Friday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Friday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Friday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "FRIDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Saturday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Saturday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Saturday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "SATURDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CalendarSystem"]
 layout_mode = 2
@@ -77,159 +252,116 @@ columns = 7
 script = ExtResource("1_xqqqp")
 firstDay = 5
 
-[node name="Sunday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Sunday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Sunday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "SUNDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Monday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Monday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Monday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "MONDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Tuesday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Tuesday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Tuesday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "TUESDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Wednesday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Wednesday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Wednesday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "WEDNESDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Thursday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Thursday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Thursday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "THURSDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Friday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Friday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Friday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "FRIDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Saturday" type="Control" parent="CalendarSystem/HBoxContainer/Dates/Container"]
-custom_minimum_size = Vector2(140, 80)
-layout_mode = 2
-script = ExtResource("1_0h8by")
-
-[node name="Panel" type="Panel" parent="CalendarSystem/HBoxContainer/Dates/Container/Saturday"]
-custom_minimum_size = Vector2(140, 50)
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 50.0
-
-[node name="RichTextLabel" type="Label" parent="CalendarSystem/HBoxContainer/Dates/Container/Saturday/Panel"]
-layout_mode = 2
-offset_right = 140.0
-offset_bottom = 50.0
-size_flags_vertical = 3
-focus_mode = 2
-text = "SATURDAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Inspector" type="Panel" parent="CalendarSystem/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_tco1l")
+script = ExtResource("4_m4ull")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CalendarSystem/HBoxContainer/Inspector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Selected Day: 0"
+
+[node name="EngineerLog" type="Control" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="TextEdit" type="Label" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/EngineerLog"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+offset_right = 304.0
+offset_bottom = 25.0
+text = "Engineer Daily Log"
+
+[node name="EntryText" type="TextEdit" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/EngineerLog"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 0
+offset_top = 29.0
+offset_right = 304.0
+offset_bottom = 119.0
+placeholder_text = "Empty entry"
+wrap_mode = 1
+
+[node name="OccultistLog" type="Control" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="TextEdit" type="Label" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/OccultistLog"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+offset_right = 304.0
+offset_bottom = 25.0
+text = "Occultist Daily Log"
+
+[node name="EntryText" type="TextEdit" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/OccultistLog"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+offset_top = 29.0
+offset_right = 304.0
+offset_bottom = 119.0
+placeholder_text = "Empty entry"
+wrap_mode = 1
+
+[node name="TeacherLog" type="Control" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="TextEdit" type="Label" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/TeacherLog"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+offset_right = 304.0
+offset_bottom = 25.0
+text = "Teacher Daily Log"
+
+[node name="EntryText" type="TextEdit" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/TeacherLog"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+offset_top = 29.0
+offset_right = 304.0
+offset_bottom = 119.0
+placeholder_text = "Empty entry"
+wrap_mode = 1
+
+[node name="ButcherLog" type="Control" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+
+[node name="TextEdit" type="Label" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/ButcherLog"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+offset_right = 304.0
+offset_bottom = 25.0
+text = "Butcher Daily Log"
+
+[node name="EntryText" type="TextEdit" parent="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/ButcherLog"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+offset_top = 29.0
+offset_right = 304.0
+offset_bottom = 119.0
+placeholder_text = "Empty entry"
+wrap_mode = 1
 
 [connection signal="pressed" from="CalendarSystem/OptionsGroup/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="confirmed" from="CalendarSystem/OptionsGroup/InitFolderDialog" to="." method="_on_init_folder_dialog_confirmed"]
 [connection signal="dir_selected" from="CalendarSystem/OptionsGroup/LoadFolderDialog" to="." method="_on_load_folder_dialog_dir_selected"]
 [connection signal="file_selected" from="CalendarSystem/OptionsGroup/LoadFolderDialog" to="." method="_on_load_folder_dialog_file_selected"]
+[connection signal="text_changed" from="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/EngineerLog/EntryText" to="CalendarSystem/HBoxContainer/Inspector" method="_on_engineer_text_changed"]
+[connection signal="text_changed" from="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/OccultistLog/EntryText" to="CalendarSystem/HBoxContainer/Inspector" method="_on_occultist_text_changed"]
+[connection signal="text_changed" from="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/TeacherLog/EntryText" to="CalendarSystem/HBoxContainer/Inspector" method="_on_teacher_text_changed"]
+[connection signal="text_changed" from="CalendarSystem/HBoxContainer/Inspector/ScrollContainer/VBoxContainer/ButcherLog/EntryText" to="CalendarSystem/HBoxContainer/Inspector" method="_on_butcher_text_changed"]
