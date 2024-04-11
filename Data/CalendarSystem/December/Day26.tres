@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DateInformation" load_steps=2 format=3 uid="uid://bm45nqpv50fa3"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Resources/DateInformation.cs" id="1_788to"]
+
+[resource]
+script = ExtResource("1_788to")
+day = 26
+EngineerLog = ""
+TeacherLog = ""
+ButcherLog = ""
+OccultistLog = ""
+Available = 0
+ExecuteMethods = ""

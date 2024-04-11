@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DateInformation" load_steps=2 format=3 uid="uid://chkbksunqy22n"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Resources/DateInformation.cs" id="1_vwvpa"]
+
+[resource]
+script = ExtResource("1_vwvpa")
+day = 16
+EngineerLog = ""
+TeacherLog = ""
+ButcherLog = ""
+OccultistLog = ""
+EngineerAvailable = false
+TeacherAvailable = false
+ButcherAvailable = false
+OccultistAvailable = false
+ExecuteMethods = ""

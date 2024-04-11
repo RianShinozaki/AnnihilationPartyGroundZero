@@ -36,7 +36,7 @@ public partial class PopulateDates : GridContainer
 			Node newDummy = dummyDate.Instantiate();
 			AddChild(newDummy);
 		}
-		for(int i = 0; i < 31; i++) {
+		for(int i = 0; i < settings.days; i++) {
 			Date newDate = date.Instantiate<Date>();
 			newDate.GetNode<Label>("Panel/Day").Text = (i+1).ToString();
 			newDate.day = i+1;

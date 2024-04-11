@@ -14,6 +14,7 @@ public partial class CalendarController : Control
 	public Date focusedDate;
 	
 	public static CalendarController Instance;
+	public DateInformation copiedDate;
 
 	[Signal]
 	public delegate void CalendarLoadedEventHandler();
@@ -47,8 +48,7 @@ public partial class CalendarController : Control
 		GD.Print("Calendar resource path selected");
 		resourcePath = path;
 		if(ResourceLoader.Exists(resourcePath + "/settings.tres")) {
-			myCalendarSettings = GD.Load<CalendarSettings>(resourcePath + "/settings.tres");
-			EmitSignal(SignalName.CalendarLoaded);
+			LoadData();
 		}
 		else {
 			GD.Print("No calendar settings found"); 
@@ -70,21 +70,27 @@ public partial class CalendarController : Control
 		GD.Print("Initializing calendar resource folder");
 		myCalendarSettings = new CalendarSettings();
 		myCalendarSettings.firstDay = DayOfWeek.Sunday;
+		myCalendarSettings.days = 31;
 
 		ResourceSaver.Singleton.Save(myCalendarSettings, resourcePath + "/settings.tres");
 
 		for(int i = 0; i < 31; i++) {
 			DateInformation newDateInformation = new DateInformation();
-			newDateInformation.logs = new string[4];
-			for(int ii = 0; ii < 4; ii++) {
-				newDateInformation.logs[ii] = "";
-			}
+			newDateInformation.day = i+1;
 			ResourceSaver.Singleton.Save(newDateInformation, resourcePath + "/Day" +(i+1).ToString() + ".tres");
 		}
+		LoadData();
+		
+	}
+
+	private void LoadData() {
+		myCalendarSettings = GD.Load<CalendarSettings>(resourcePath + "/settings.tres");
 		EmitSignal(SignalName.CalendarLoaded);
 	}
-	public void ChangeFocusedDate(Date newFocus) {
-		focusedDate = newFocus;
-		EmitSignal(SignalName.ChangedFocusedDate, newFocus);
+	private void _on_calendarsettings_pressed() {
+      	EditorInterface.Singleton.InspectObject(myCalendarSettings);
+	}
+	private void _on_reload_pressed() {
+		LoadData();
 	}
 }

@@ -9,5 +9,6 @@ using System.Runtime.InteropServices;
 public partial class CalendarSettings : Resource
 {
 	[Export] public DayOfWeek firstDay;
+	[Export] public int days;
 
 }

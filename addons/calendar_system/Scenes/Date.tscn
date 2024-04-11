@@ -37,4 +37,14 @@ offset_bottom = 68.0
 layout_mode = 2
 text = "Edit"
 
+[node name="Copy" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Copy"
+
+[node name="Paste" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Paste"
+
 [connection signal="pressed" from="Panel/HBoxContainer/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Copy" to="." method="_on_copy_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Paste" to="." method="_on_paste_pressed"]
