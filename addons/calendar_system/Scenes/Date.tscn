@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/calendar_system/Scripts/Date.cs" id="1_r1or0"]
 
 [node name="DialogueNode" type="Control"]
-custom_minimum_size = Vector2(140, 140)
+custom_minimum_size = Vector2(140, 180)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_r1or0")

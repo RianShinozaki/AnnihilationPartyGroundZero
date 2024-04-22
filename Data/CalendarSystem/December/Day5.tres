@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="DateInformation" load_steps=2 format=3 uid="uid://dfdxa32hkc4ax"]
+[gd_resource type="Resource" script_class="DateInformation" load_steps=2 format=3 uid="uid://df5btwb3427ee"]
 
-[ext_resource type="Script" path="res://addons/calendar_system/Resources/DateInformation.cs" id="1_mu4la"]
+[ext_resource type="Script" path="res://addons/calendar_system/Resources/DateInformation.cs" id="1_m6kjy"]
 
 [resource]
-script = ExtResource("1_mu4la")
+script = ExtResource("1_m6kjy")
 day = 5
-EngineerLog = ""
-TeacherLog = ""
-ButcherLog = ""
-OccultistLog = ""
-Available = 0
+EngineerLog = "The Engineer went to work and then spent the night in a cafe."
+TeacherLog = "The Teacher worked at the child refugee shelter all morning and taught in the evening."
+ButcherLog = "The Butcher went to work in the morning, and then went home."
+OccultistLog = "The Occultist spent the night painting arcane runes in the park."
+Available = 15
 ExecuteMethods = ""

@@ -30,7 +30,7 @@ public partial class PopulateDates : GridContainer
 		
 		GD.Print("Loading dates into calendar");
 		CalendarSettings settings = (CalendarSettings)CalendarController.Instance.myCalendarSettings;
-		firstDay = settings.firstDay; 
+		firstDay = CalendarController.Instance.myCalendarSettings.firstDay; 
 		
 		for(int i = 0; i < (int)firstDay; i++) {
 			Node newDummy = dummyDate.Instantiate();

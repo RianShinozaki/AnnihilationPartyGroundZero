@@ -20,13 +20,19 @@ public partial class Date : Node
       CalendarController.Instance.copiedDate = myInformation;
     }
     private void _on_paste_pressed() {
-      DateInformation newDate = CalendarController.Instance.copiedDate.Duplicate() as DateInformation;
-      newDate.day = day;
-      myInformation = newDate;
-      
-      DirAccess thisDir = DirAccess.Open(CalendarController.Instance.resourcePath);
-      thisDir.Remove("Day" + day.ToString() + ".tres");
 
-		  ResourceSaver.Singleton.Save(myInformation, CalendarController.Instance.resourcePath + "/Day" + day.ToString() + ".tres");
+      DirAccess thisDir = DirAccess.Open(CalendarController.Instance.resourcePath);
+
+      thisDir.Remove("Day" + day.ToString() + ".tres");
+      myInformation = null;
+
+      DateInformation newDate = CalendarController.Instance.copiedDate.Duplicate(true) as DateInformation;
+      newDate.day = day;
+      newDate.TakeOverPath(CalendarController.Instance.resourcePath + "/Day" + day.ToString() + ".tres");
+      ResourceSaver.Singleton.Save(newDate, CalendarController.Instance.resourcePath + "/Day" + day.ToString() + ".tres");
+
+		  myInformation = GD.Load<DateInformation>(CalendarController.Instance.resourcePath + "/Day" + day.ToString() + ".tres");
+      EditorInterface.Singleton.InspectObject(myInformation);
+
     }
 }

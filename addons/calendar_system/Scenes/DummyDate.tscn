@@ -9,7 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(140, 140)
+custom_minimum_size = Vector2(140, 180)
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 140.0

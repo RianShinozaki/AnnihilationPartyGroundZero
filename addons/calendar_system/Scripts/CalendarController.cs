@@ -85,6 +85,7 @@ public partial class CalendarController : Control
 
 	private void LoadData() {
 		myCalendarSettings = GD.Load<CalendarSettings>(resourcePath + "/settings.tres");
+		GD.Print("found settings object, first day: ", myCalendarSettings.firstDay);
 		EmitSignal(SignalName.CalendarLoaded);
 	}
 	private void _on_calendarsettings_pressed() {
