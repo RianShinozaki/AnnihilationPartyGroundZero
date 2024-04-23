@@ -42,9 +42,7 @@ public partial class Teacher : Speaker
 
 		if(GameController.hams > 0) GameController.teacherQuestionFlags[1] = true;
 
-		if(GameController.currentTime != 0 
-			|| GameController.GetDay(GameController.currentDay) == "Thursday" 
-			|| GameController.GetDay(GameController.currentDay) == "Monday") {
+		if(GameController.currentTime != 0 || (GameController.todayDateInformation.Available & 0b0010) == 0) {
 				textbox_system.Instance.Initialize(-100);
 				NPCSprite.Visible = false;
 				return;
