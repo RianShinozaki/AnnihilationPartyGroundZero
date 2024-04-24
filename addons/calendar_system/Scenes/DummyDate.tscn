@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://xp38bf75jubg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e1no"]
+bg_color = Color(0.0431373, 0.054902, 0.0705882, 1)
+
+[node name="DialogueNode" type="Control"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(140, 180)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e1no")

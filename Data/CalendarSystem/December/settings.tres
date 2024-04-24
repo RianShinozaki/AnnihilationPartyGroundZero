@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CalendarSettings" load_steps=2 format=3 uid="uid://c1v55sub87isv"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Resources/CalendarSettings.cs" id="1_3651v"]
+
+[resource]
+script = ExtResource("1_3651v")
+firstDay = 5
+days = 31

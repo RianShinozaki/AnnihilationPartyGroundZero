@@ -3,7 +3,7 @@ using System;
 
 public partial class OfficeSpeaker : Speaker
 {
-	bool DoIntro = true;
+	bool DoIntro = false;
 	public static OfficeSpeaker Instance;
 	public int lastCalledDay = 0;
 

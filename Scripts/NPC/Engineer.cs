@@ -45,14 +45,11 @@ public partial class Engineer : Speaker
 		GameController.theSpeaker = this;
 		if(GameController.brokenPhones > 0) GameController.engineerQuestionFlags[6] = true;
 
-		if(GameController.currentTime != 1 
-			|| GameController.GetDay(GameController.currentDay) == "Saturday" 
-			|| GameController.GetDay(GameController.currentDay) == "Thursday"
-			|| GameController.currentDay == 15 || GameController.currentDay == 16 || GameController.currentDay == 17) {
-				textbox_system.Instance.Initialize(-100);
-				NPCSprite.Visible = false;
-				return;
-			}
+		if(GameController.currentTime != 1 || (GameController.todayDateInformation.Available & 0b0001) == 0) {
+			textbox_system.Instance.Initialize(-100);
+			NPCSprite.Visible = false;
+			return;
+		}
 		
 		textbox_system.Instance.Initialize(-2);
 		

@@ -46,9 +46,7 @@ public partial class Occultist : Speaker
 		GameController.occultistQuestionFlags[0] = true;
 		if(GameController.steaks > 0) GameController.occultistQuestionFlags[1] = true;
 
-		if(GameController.currentTime != 1 
-			|| GameController.GetDay(GameController.currentDay) == "Monday" 
-			|| GameController.GetDay(GameController.currentDay) == "Wednesday") {
+		if(GameController.currentTime != 1 || (GameController.todayDateInformation.Available & 0b1000) == 0) {
 				textbox_system.Instance.Initialize(-100);
 				NPCSprite.Visible = false;
 				//tempObscure.Visible = true;

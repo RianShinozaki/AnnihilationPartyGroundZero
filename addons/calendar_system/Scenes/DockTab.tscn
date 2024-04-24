@@ -1,0 +1,262 @@
+[gd_scene load_steps=3 format=3 uid="uid://btyhhtdye2qku"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Scripts/CalendarController.cs" id="1_j1lpr"]
+[ext_resource type="Script" path="res://addons/calendar_system/Scripts/PopulateDates.cs" id="1_xqqqp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j1lpr")
+
+[node name="CalendarSystem" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 38.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionsGroup" type="HBoxContainer" parent="CalendarSystem"]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="CalendarSystem/OptionsGroup"]
+layout_mode = 2
+text = "Load Folder"
+
+[node name="InitFolderDialog" type="ConfirmationDialog" parent="CalendarSystem/OptionsGroup"]
+title = "Warning"
+size = Vector2i(367, 100)
+dialog_text = "Folder not configured. Create resources now?"
+dialog_autowrap = true
+
+[node name="LoadFolderDialog" type="FileDialog" parent="CalendarSystem/OptionsGroup"]
+title = "Open a Directory"
+position = Vector2i(560, 435)
+size = Vector2i(392, 364)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+
+[node name="LoadFailDialog" type="AcceptDialog" parent="CalendarSystem/OptionsGroup"]
+size = Vector2i(259, 100)
+dialog_text = "Folder is invalid and nonempty."
+
+[node name="Window" type="AcceptDialog" parent="CalendarSystem/OptionsGroup"]
+title = "Calendar Setup"
+initial_position = 2
+size = Vector2i(300, 200)
+
+[node name="PopupMenu" type="MenuButton" parent="CalendarSystem/OptionsGroup/Window"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 151.0
+text = "Click to set day 1"
+item_count = 7
+popup/item_0/text = "Sunday"
+popup/item_0/id = 0
+popup/item_1/text = "Monday"
+popup/item_1/id = 1
+popup/item_2/text = "Tuesday"
+popup/item_2/id = 2
+popup/item_3/text = "Wednesday"
+popup/item_3/id = 3
+popup/item_4/text = "Thursday"
+popup/item_4/id = 4
+popup/item_5/text = "Friday"
+popup/item_5/id = 5
+popup/item_6/text = "Saturday"
+popup/item_6/id = 6
+
+[node name="Reload" type="Button" parent="CalendarSystem/OptionsGroup"]
+layout_mode = 2
+text = "Reload"
+
+[node name="InspectCalendar" type="Button" parent="CalendarSystem/OptionsGroup"]
+layout_mode = 2
+text = "Inspect Calendar Settings"
+
+[node name="DayOfWeek" type="GridContainer" parent="CalendarSystem"]
+custom_minimum_size = Vector2(1000, 40)
+layout_mode = 2
+columns = 7
+
+[node name="Sunday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Sunday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Sunday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "SUNDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Monday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Monday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Monday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "MONDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tuesday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Tuesday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Tuesday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "TUESDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wednesday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Wednesday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Wednesday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "WEDNESDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thursday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Thursday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Thursday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "THURSDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Friday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Friday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Friday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "FRIDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Saturday" type="Control" parent="CalendarSystem/DayOfWeek"]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CalendarSystem/DayOfWeek/Saturday"]
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="Label" parent="CalendarSystem/DayOfWeek/Saturday/Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+focus_mode = 2
+text = "SATURDAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CalendarSystem"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Dates" type="ScrollContainer" parent="CalendarSystem/HBoxContainer"]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Container" type="GridContainer" parent="CalendarSystem/HBoxContainer/Dates"]
+custom_minimum_size = Vector2(1000, 4000)
+layout_mode = 2
+columns = 7
+script = ExtResource("1_xqqqp")
+firstDay = 5
+
+[connection signal="pressed" from="CalendarSystem/OptionsGroup/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="confirmed" from="CalendarSystem/OptionsGroup/InitFolderDialog" to="." method="_on_init_folder_dialog_confirmed"]
+[connection signal="dir_selected" from="CalendarSystem/OptionsGroup/LoadFolderDialog" to="." method="_on_load_folder_dialog_dir_selected"]
+[connection signal="file_selected" from="CalendarSystem/OptionsGroup/LoadFolderDialog" to="." method="_on_load_folder_dialog_file_selected"]
+[connection signal="pressed" from="CalendarSystem/OptionsGroup/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="CalendarSystem/OptionsGroup/InspectCalendar" to="." method="_on_calendarsettings_pressed"]

@@ -38,9 +38,7 @@ public partial class Butcher : Speaker
         base._Ready();
 		GameController.theSpeaker = this;
 
-		if(GameController.currentTime != 0 
-			|| GameController.GetDay(GameController.currentDay) == "Saturday" 
-			|| GameController.GetDay(GameController.currentDay) == "Sunday") {
+		if(GameController.currentTime != 0 || (GameController.todayDateInformation.Available & 0b0100) == 0) {
 			textbox_system.Instance.Initialize(-100);
 			NPCSprite.Visible = false;
 			return;

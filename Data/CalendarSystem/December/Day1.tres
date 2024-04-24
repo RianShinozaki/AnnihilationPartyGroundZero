@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DateInformation" load_steps=2 format=3 uid="uid://b2eiwspul56nf"]
+
+[ext_resource type="Script" path="res://addons/calendar_system/Resources/DateInformation.cs" id="1_htadg"]
+
+[resource]
+script = ExtResource("1_htadg")
+day = 1
+EngineerLog = "The Engineer went to work all day and then went to the cafe in the evening."
+TeacherLog = "The Teacher worked at the refugee center in the morning and then taught in the evening."
+ButcherLog = "The Butcher worked in his shop until late."
+OccultistLog = "The Occultist worked all day and then spent the night painting runes around the park."
+Available = 15
+ExecuteMethods = ""

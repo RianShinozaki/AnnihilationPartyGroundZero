@@ -1,7 +1,22 @@
 using Godot;
 using System;
 
-
+public enum DayOfWeek {
+	Sunday,
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday
+}
+public enum Suspects {
+    Engineer,
+    Occultist,
+    Teacher,
+    Butcher,
+    COUNT
+}
 
 public partial class GameController : Node
 {
@@ -75,6 +90,9 @@ public partial class GameController : Node
     public static float money;
     public static Godot.Collections.Array items = new Godot.Collections.Array();
 
+    [Export] public static DateInformation todayDateInformation;
+	[Export] public string logFolder = "res://Data/CalendarSystem/December";
+
     public static float[] trustLevels = new float[5];
 
     public static short[] butcherMemory = new short[10];
@@ -115,12 +133,13 @@ public partial class GameController : Node
     {
         base._Ready();
         wishSplitX = 215;
-        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://TitleScreen.tscn");
+        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://MainGame2D.tscn");
         Instance = this;
 
         for(int i = 0; i < trustLevels.Length; i++) {
             trustLevels[i] = 0;
         }
+        InitializeNewDay();
 
         money = 200;
     }
@@ -161,11 +180,15 @@ public partial class GameController : Node
             if(currentTime > 1) {
                 currentDay++;
                 currentTime = 0;
+                InitializeNewDay();
             }
         } else {
             wishSplitX = 50;
             currentState = GameState.SuspectLocation;
         }
+    }
+    private void InitializeNewDay() {
+        todayDateInformation = GD.Load<DateInformation>(logFolder + "/Day" + currentDay.ToString() + ".tres");
     }
     public static void AddToInventory(Item item) {
         items.Add(item);
