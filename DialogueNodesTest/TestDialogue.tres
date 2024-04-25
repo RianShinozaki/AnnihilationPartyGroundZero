@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://sv6pcxvjph0n"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_s1rul"]
+
+[resource]
+script = ExtResource("1_s1rul")
+starts = {
+"0": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(80, 200),
+"start_id": "0"
+},
+"1_1": {
+"dialogue": "Question	",
+"offset": Vector2(320, 200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "No"
+}
+},
+"size": Vector2(300, 356.5),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "Yay",
+"offset": Vector2(800, 240),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 276.5),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "fuck",
+"offset": Vector2(636, 623.5),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 276.5),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://DialogueNodesTest/Characters.tres"

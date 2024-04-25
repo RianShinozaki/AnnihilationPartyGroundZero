@@ -41,7 +41,7 @@ project/assembly_name="AberDetective"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/calendar_system/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg")
+enabled=PackedStringArray("res://addons/calendar_system/plugin.cfg", "res://addons/dialogue_nodes/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg")
 
 [importer_defaults]
 

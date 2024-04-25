@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=5 format=3 uid="uid://fep6alxynck1"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_ppspe"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_rnewf"]
+
+[sub_resource type="Resource" id="Resource_ke7sx"]
+script = ExtResource("1_ppspe")
+name = "Narrator"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_hgxj7"]
+script = ExtResource("1_ppspe")
+name = "Old Detective"
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("1_rnewf")
+characters = Array[ExtResource("1_ppspe")]([SubResource("Resource_ke7sx"), SubResource("Resource_hgxj7")])

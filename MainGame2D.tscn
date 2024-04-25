@@ -35,7 +35,7 @@ shader_parameter/viewport_size = Vector2(1280, 720)
 shader_parameter/split_line_thickness = 0.0
 shader_parameter/split_line_color = Vector4(1, 1, 1, 1)
 shader_parameter/split_slope = 3.5
-shader_parameter/split_origin = Vector2(1.215, 0.5)
+shader_parameter/split_origin = Vector2(0.735, 0.5)
 shader_parameter/viewport1 = SubResource("ViewportTexture_l607p")
 shader_parameter/viewport2 = SubResource("ViewportTexture_l18a7")
 
@@ -108,6 +108,7 @@ offset_right = 320.0
 offset_bottom = 180.0
 
 [node name="SubViewport" type="SubViewport" parent="Control/Investigation"]
+own_world_3d = true
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true

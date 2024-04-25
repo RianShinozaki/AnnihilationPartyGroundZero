@@ -1,4 +1,15 @@
-[gd_scene format=3 uid="uid://dfeb5rrjvuxnm"]
+[gd_scene load_steps=7 format=3 uid="uid://dfeb5rrjvuxnm"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="1_4o3yv"]
+[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://DialogueNodesTest/TestDialogue.tres" id="2_2yq25"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_qus84"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_lwbrj"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_sixde"]
+script = ExtResource("3_qus84")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_y08w4"]
+script = ExtResource("4_lwbrj")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +18,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DialogueBox" type="Panel" parent="."]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 0
+offset_right = 594.0
+offset_bottom = 128.0
+script = ExtResource("1_4o3yv")
+dialogue_data = ExtResource("2_2yq25")
+start_id = "0"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_sixde"), SubResource("RichTextEffect_y08w4")])
