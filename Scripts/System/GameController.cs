@@ -133,7 +133,7 @@ public partial class GameController : Node
     {
         base._Ready();
         wishSplitX = 215;
-        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://MainGame2D.tscn");
+        //GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://MainGame2D.tscn");
         Instance = this;
 
         for(int i = 0; i < trustLevels.Length; i++) {

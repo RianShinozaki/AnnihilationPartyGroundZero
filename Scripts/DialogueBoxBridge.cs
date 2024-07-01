@@ -7,7 +7,7 @@ public partial class DialogueBoxBridge : Node {
     public override void _Ready() {
         base._Ready();
 
-        dialogueBox = GetParent();
+        dialogueBox = GetChild(0);
     }
 
     public void Start(string ID) => dialogueBox.Call("start", ID);

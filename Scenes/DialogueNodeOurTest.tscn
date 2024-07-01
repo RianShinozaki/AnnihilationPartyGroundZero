@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp48vkux57h25"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="1_6ux3u"]
+[ext_resource type="Script" path="res://Scripts/Debug/DialogueNodeOurTest.cs" id="1_iwapa"]
+[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://DialogueNodesTest/TestDialogue.tres" id="2_dmnff"]
+[ext_resource type="Script" path="res://Scripts/DialogueBoxBridge.cs" id="2_frj2k"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_ektdx"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_t1v4p"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qawg3"]
+script = ExtResource("3_ektdx")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_u7ma1"]
+script = ExtResource("4_t1v4p")
+
+[node name="DialogueNodeOurTest" type="Control" node_paths=PackedStringArray("dialogueBox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwapa")
+dialogueBox = NodePath("Control")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 127.0
+offset_right = 348.0
+offset_bottom = 178.0
+text = "Test"
+
+[node name="Control" type="Node" parent="."]
+script = ExtResource("2_frj2k")
+
+[node name="DialogueBox" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(256, 128)
+offset_left = 197.0
+offset_top = 405.0
+offset_right = 1134.0
+offset_bottom = 684.0
+script = ExtResource("1_6ux3u")
+dialogue_data = ExtResource("2_dmnff")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_qawg3"), SubResource("RichTextEffect_u7ma1")])
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

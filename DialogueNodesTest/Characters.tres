@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Resource_ke7sx"]
 script = ExtResource("1_ppspe")
-name = "Narrator"
+name = ""
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_hgxj7"]
 script = ExtResource("1_ppspe")
-name = "Old Detective"
+name = "Teacher"
 color = Color(1, 1, 1, 1)
 
 [resource]

@@ -5,57 +5,122 @@
 [resource]
 script = ExtResource("1_s1rul")
 starts = {
-"0": &"0_1"
+"Normal": &"0_1"
 }
 nodes = {
 "0_1": {
-"link": &"1_1",
-"offset": Vector2(80, 200),
-"start_id": "0"
+"link": &"1_3",
+"offset": Vector2(-1280, -64),
+"start_id": "Normal"
 },
 "1_1": {
-"dialogue": "Question	",
-"offset": Vector2(320, 200),
+"dialogue": "Hi! It's good to see you again.",
+"offset": Vector2(-320, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 276.5),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "*They turn to you.",
+"offset": Vector2(-640, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "*You find the Teacher surrounded by smiling faces, as usual.",
+"offset": Vector2(-960, -64),
 "options": {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": "Yes"
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": -1
+},
+"1_4": {
+"dialogue": "There's a lot I could use your help with today...",
+"offset": Vector2(0, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 276.5),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "*You spend the morning helping the Teacher around the center.",
+"offset": Vector2(320, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": -1
+},
+"1_6": {
+"dialogue": "...",
+"offset": Vector2(640, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": 0
+},
+"1_7": {
+"dialogue": "*Before you know it, it's noon. You and the Teacher take a moment for some lunch.",
+"offset": Vector2(960, -64),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": 0
+},
+"1_8": {
+"dialogue": "",
+"offset": Vector2(1344, -96),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "asd"
 },
 1: {
 "condition": {},
-"link": &"1_3",
-"text": "No"
-}
-},
-"size": Vector2(300, 356.5),
-"speaker": 0
-},
-"1_2": {
-"dialogue": "Yay",
-"offset": Vector2(800, 240),
-"options": {
-0: {
-"condition": {},
 "link": "END",
-"text": ""
+"text": "sdf"
 }
 },
-"size": Vector2(300, 276.5),
-"speaker": 1
-},
-"1_3": {
-"dialogue": "fuck",
-"offset": Vector2(636, 623.5),
-"options": {
-0: {
-"condition": {},
-"link": "END",
-"text": ""
-}
-},
-"size": Vector2(300, 276.5),
-"speaker": 1
+"size": Vector2(300, 355.5),
+"speaker": ""
 }
 }
 variables = {}
