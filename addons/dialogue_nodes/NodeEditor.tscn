@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bqscglixmr4bd"]
+[gd_scene load_steps=23 format=3 uid="uid://bqscglixmr4bd"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/editor/editor.gd" id="1"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/editor/graph.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bnlg07ckbg0w" path="res://addons/dialogue_nodes/icons/Back.svg" id="3"]
-[ext_resource type="PackedScene" path="res://addons/dialogue_nodes/nodes/StartNode.tscn" id="3_tj7os"]
+[ext_resource type="PackedScene" uid="uid://c5rhd84ga4cqf" path="res://addons/dialogue_nodes/nodes/StartNode.tscn" id="3_tj7os"]
 [ext_resource type="Texture2D" uid="uid://cc1ufhyvste6m" path="res://addons/dialogue_nodes/icons/Forward.svg" id="4"]
 [ext_resource type="PackedScene" uid="uid://b60fa8vcjuoo6" path="res://addons/dialogue_nodes/nodes/DialogueNode.tscn" id="4_5pa2d"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dsllcvm7vi10m" path="res://addons/dialogue_nodes/nodes/SetNode.tscn" id="7_wfio7"]
 [ext_resource type="PackedScene" uid="uid://3ofh51q0vhmg" path="res://addons/dialogue_nodes/nodes/ConditionNode.tscn" id="8_twnhk"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/editor/files.gd" id="9"]
+[ext_resource type="PackedScene" uid="uid://dh03vx03ixyrm" path="res://addons/dialogue_nodes/nodes/SkillCheckNode.tscn" id="9_43gtc"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/editor/variables.gd" id="10"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/editor/characters.gd" id="10_cxec0"]
 [ext_resource type="Texture2D" uid="uid://cf5ef41yo6jl6" path="res://addons/dialogue_nodes/icons/Reload.svg" id="11_ku5xd"]
@@ -115,7 +116,7 @@ popup/item_0/id = 0
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("7")
-nodeScenes = Array[PackedScene]([ExtResource("3_tj7os"), ExtResource("4_5pa2d"), ExtResource("5_vlm1n"), ExtResource("6_afs3i"), ExtResource("7_wfio7"), ExtResource("8_twnhk")])
+nodeScenes = Array[PackedScene]([ExtResource("3_tj7os"), ExtResource("4_5pa2d"), ExtResource("5_vlm1n"), ExtResource("6_afs3i"), ExtResource("7_wfio7"), ExtResource("8_twnhk"), ExtResource("9_43gtc")])
 
 [node name="SidePanel" type="VSplitContainer" parent="Main/Workspace"]
 clip_contents = true

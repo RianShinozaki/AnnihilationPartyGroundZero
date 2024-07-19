@@ -68,6 +68,7 @@ var characterList : CharacterList = null
 
 var _bbcode_regex : RegEx
 
+var game_controller
 
 func _enter_tree():
 	if get_child_count() > 0:
@@ -134,6 +135,7 @@ func _ready():
 	_bbcode_regex = RegEx.new()
 	_bbcode_regex.compile('\\n|\\[img\\].*?\\[\\/img\\]|\\[.*?\\]')
 	
+	game_controller = get_tree().get_root().get_node("GameController")
 	for effect in custom_effects:
 		if effect is RichTextWait:
 			effect.wait_finished.connect(show_options)
@@ -539,9 +541,20 @@ func _skill_check(skill_dict: Dictionary):
 	var value1 = skill_dict['skillType']
 	var value2 = skill_dict['difficulty']
 
+	var skillLevel : int = 0
+	skillLevel = 1 + floori(game_controller.skillLevels[int(skill_dict['skillType'])])
+	var rng = RandomNumberGenerator.new()
+	var my_random_number = rng.randf_range(0, int(skill_dict['difficulty'] + 2))
+	
+	print(my_random_number, " vs ", skillLevel)
+	
 	# Perform operation
 	var result : bool = false
-
+	if my_random_number <= skillLevel:
+		result = true
+	
+	if result:
+		game_controller.EmitPlayCutIn("My ass", Color.WHITE)
 	return result
 
 

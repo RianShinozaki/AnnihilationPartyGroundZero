@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dr8wja5demo6x"]
+
+[ext_resource type="FontFile" uid="uid://or16hm10ws1k" path="res://Font/SignwoodItalic-K74BA.ttf" id="1_isy1p"]
+
+[resource]
+font = ExtResource("1_isy1p")
+font_size = 44
+outline_size = 17
+outline_color = Color(0.545098, 0, 0.541176, 1)

@@ -59,9 +59,8 @@ public partial class TeacherNPC : DialogueCaller
 	public void Init() {
 		if((bool)GameController.teacherMemory["has_met"] == true) {
 			bridge.Start("normal");
-			return;
 		} else {
-			textbox_system.Instance.Initialize(100);
+			bridge.Start("intro");
 		}
 	}
 

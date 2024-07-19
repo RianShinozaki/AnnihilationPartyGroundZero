@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_7usx8"]
 [ext_resource type="Script" path="res://Scripts/NPC/TeacherNPC.cs" id="5_08pt6"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_34ery"]
-[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://Data/Dialogue/DialogueNodesTest/TestDialogue.tres" id="7_lc4ls"]
+[ext_resource type="Resource" uid="uid://rqra4wnso0mc" path="res://TeacherDialogue.tres" id="6_mfhrv"]
 [ext_resource type="Script" path="res://Scripts/FX/PooledParticleEmitter.cs" id="8_jiico"]
 [ext_resource type="Texture2D" uid="uid://cqjrmajyn3b3r" path="res://Art Assets/Scenes/Teacher/TeacherWIP.png" id="9_mo385"]
 
@@ -333,7 +333,7 @@ offset_bottom = 40.0
 script = ExtResource("5_08pt6")
 NPCSprite = NodePath("../Character")
 animPlayer = NodePath("../Character/AnimationPlayer")
-myDialogueResource = ExtResource("7_lc4ls")
+myDialogueResource = ExtResource("6_mfhrv")
 
 [node name="PooledParticleEmitter" type="Node2D" parent="Speaker"]
 position = Vector2(615, 259)

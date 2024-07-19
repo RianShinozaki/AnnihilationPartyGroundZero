@@ -9,8 +9,8 @@ starts = {
 }
 nodes = {
 "0_1": {
-"link": &"1_1",
-"offset": Vector2(-1995.16, -942.727),
+"link": &"4_3",
+"offset": Vector2(-2460, -960),
 "start_id": "intro"
 },
 "1_1": {
@@ -20,6 +20,107 @@ nodes = {
 0: {
 "condition": {},
 "link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_10": {
+"dialogue": "Something about the name tickles your brain, and not at all pleasantly… but you have no idea beyond that.",
+"offset": Vector2(1960, -940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_11": {
+"dialogue": "Ask the Teacher about Unobhel House?",
+"offset": Vector2(2320, -940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_12": {
+"dialogue": "",
+"offset": Vector2(2640, -920),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": "(Sure.)"
+},
+1: {
+"condition": {},
+"link": &"6_3",
+"text": "(Nope.)"
+}
+},
+"size": Vector2(300, 355.5),
+"speaker": ""
+},
+"1_13": {
+"dialogue": "Ask the Teacher about Unobhel House anyway?",
+"offset": Vector2(2300, -1280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_14": {
+"dialogue": "",
+"offset": Vector2(2640, -1320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": "(Sure.)"
+},
+1: {
+"condition": {},
+"link": &"1_8",
+"text": "(Nope.)"
+}
+},
+"size": Vector2(300, 355.5),
+"speaker": ""
+},
+"1_15": {
+"dialogue": "[color=dimgray](Fake it till you make it.)[/color]",
+"offset": Vector2(2960, -720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_16": {
+"dialogue": "",
+"offset": Vector2(3280, -1280),
+"options": {
+0: {
+"condition": {},
+"link": "END",
 "text": ""
 }
 },
@@ -58,7 +159,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_5",
+"link": &"6_1",
 "text": ""
 }
 },
@@ -66,20 +167,185 @@ nodes = {
 "speaker": ""
 },
 "1_5": {
-"dialogue": "Peanits",
-"offset": Vector2(-495.08, -970.56),
+"dialogue": " [color=orchid]*Tension suddenly runs through them. They shake it off just as quickly.[/color]",
+"offset": Vector2(-200, -1340),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"4_1",
 "text": ""
 }
 },
-"size": Vector2(300, 275.5),
+"size": Vector2(300, 315.5),
 "speaker": ""
+},
+"1_6": {
+"dialogue": "*Still smiling brightly, the Teacher steps between you and the children and prepares their usual greeting.
+",
+"offset": Vector2(280, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_7": {
+"dialogue": "Ah, what have we here? Welcome to the Unobhel House Refugee Center!
+",
+"offset": Vector2(600, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_8": {
+"dialogue": "",
+"offset": Vector2(980, -960),
+"options": {
+0: {
+"condition": {
+"operator": 0,
+"value1": "{{f2}}",
+"value2": "0"
+},
+"link": &"4_2",
+"text": "{Unobhel House... what is that?)"
+},
+1: {
+"condition": {
+"operator": 0,
+"value1": "{{f3}}",
+"value2": "0"
+},
+"link": "END",
+"text": "Lots of kids here."
+},
+2: {
+"condition": {
+"operator": 0,
+"value1": "{{f1}}",
+"value2": "1"
+},
+"link": "END",
+"text": "Didn't mean to scare you..."
+},
+3: {
+"condition": {
+"operator": 0,
+"value1": "{{f4}}",
+"value2": "1"
+},
+"link": "END",
+"text": "I'd like to join the volunteer effort."
+}
+},
+"size": Vector2(300, 439.5),
+"speaker": ""
+},
+"1_9": {
+"dialogue": "[color=lightgreen] A wide-reaching nonprofit organization based in Oc'Sys -- this very city. Known for its charismatic presidents, lavish fundraisers… and the many rumors of embezzlement and silenced whistleblowers. [/color]",
+"offset": Vector2(1960, -1260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"4_1": {
+"link": &"1_6",
+"offset": Vector2(140, -1320),
+"type": 0,
+"value": "1",
+"variable": "f1"
+},
+"4_2": {
+"link": &"6_2",
+"offset": Vector2(1300, -1140),
+"type": 0,
+"value": "1",
+"variable": "f2"
+},
+"4_3": {
+"link": &"4_4",
+"offset": Vector2(-2260, -1140),
+"type": 0,
+"value": "0",
+"variable": "f1"
+},
+"4_4": {
+"link": &"4_5",
+"offset": Vector2(-2240, -1020),
+"type": 0,
+"value": "0",
+"variable": "f2"
+},
+"4_5": {
+"link": &"4_6",
+"offset": Vector2(-2240, -900),
+"type": 0,
+"value": "0",
+"variable": "f3"
+},
+"4_6": {
+"link": &"1_1",
+"offset": Vector2(-2220, -800),
+"type": 0,
+"value": "0",
+"variable": "f4"
+},
+"6_1": {
+"difficulty": 1,
+"false": &"1_6",
+"offset": Vector2(-420, -900),
+"skillType": 0,
+"true": &"1_5"
+},
+"6_2": {
+"difficulty": 1,
+"false": &"1_10",
+"offset": Vector2(1620, -1140),
+"skillType": 2,
+"true": &"1_9"
+},
+"6_3": {
+"difficulty": 0,
+"false": &"1_8",
+"offset": Vector2(2960, -900),
+"skillType": 5,
+"true": &"1_15"
 }
 }
-variables = {}
+variables = {
+"f1": {
+"type": 2,
+"value": 0.0
+},
+"f2": {
+"type": 2,
+"value": 0.0
+},
+"f3": {
+"type": 2,
+"value": 0.0
+},
+"f4": {
+"type": 2,
+"value": 0.0
+}
+}
 comments = Array[String]([])
 strays = Array[String]([])
 characters = ""

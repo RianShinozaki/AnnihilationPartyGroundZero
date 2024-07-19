@@ -29,6 +29,8 @@ public partial class GameController : Node
     public delegate void MoneyChangedEventHandler();
     [Signal]
     public delegate void BeginIntroSequenceEventHandler();
+    [Signal]
+    public delegate void PlayCutInEventHandler(string text, Color color);
 
     public enum GameState {
         Office,
@@ -137,6 +139,8 @@ public partial class GameController : Node
 
     const int INOFFICESPLITX = 400;
     const int INVESTIGATIONSPLITX = 50;
+
+    [Export] public Godot.Collections.Array<int> skillLevels = new Godot.Collections.Array<int>();
     public override void _Ready()
     {
         base._Ready();
@@ -153,6 +157,13 @@ public partial class GameController : Node
         splitX = INOFFICESPLITX;
         split2X = INOFFICESPLITX;
         split3X = INOFFICESPLITX;
+
+        skillLevels.Add(0);
+        skillLevels.Add(0);
+        skillLevels.Add(0);
+        skillLevels.Add(0);
+        skillLevels.Add(0);
+        skillLevels.Add(0);
     }
     public static void SetSplitX(float x) {
 		splitX = x;
@@ -232,6 +243,10 @@ public partial class GameController : Node
     }
     public static string GetDay(int day) {
         return (string)days[(day-1)%7];
+    }
+    public void EmitPlayCutIn(string text, Color color) {
+        EmitSignal(SignalName.PlayCutIn, text, color);
+        
     }
 }
 

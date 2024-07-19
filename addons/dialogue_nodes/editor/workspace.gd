@@ -5,14 +5,14 @@ extends Control
 signal node_added(node_name)
 signal node_deleted(node_name)
 
+#IT'S A FUCKIN TRICK
 @export var nodeScenes: Array[PackedScene] = [
 	preload("res://addons/dialogue_nodes/nodes/StartNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/DialogueNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/CommentNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/SignalNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/SetNode.tscn"),
-	preload("res://addons/dialogue_nodes/nodes/SkillCheckNode.tscn"),
-	#preload("res://addons/dialogue_nodes/nodes/ConditionNode.tscn")
+	preload("res://addons/dialogue_nodes/nodes/ConditionNode.tscn")
 ]
 
 @onready var files = $SidePanel/Files
