@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfeb5rrjvuxnm"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="1_4o3yv"]
-[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://DialogueNodesTest/TestDialogue.tres" id="2_2yq25"]
+[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://Data/Dialogue/DialogueNodesTest/TestDialogue.tres" id="2_2yq25"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_qus84"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_lwbrj"]
 

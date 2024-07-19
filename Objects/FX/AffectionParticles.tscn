@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://din7gquc2fkf1"]
+
+[ext_resource type="Texture2D" uid="uid://ccs3w54mvjtov" path="res://Art Assets/FX/AffectionParticles.png" id="1_pnby3"]
+[ext_resource type="Script" path="res://Scripts/FX/AffectionParticles.cs" id="2_thlr3"]
+
+[sub_resource type="Curve" id="Curve_5ijpr"]
+min_value = -1.0
+_data = [Vector2(0, 0), 0.0, 9.74584, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), -9.53161, -9.53161, 0, 0, Vector2(0.75, -1), 0.0, 0.0, 0, 0, Vector2(1, 0), 7.39604, 0.0, 0, 0]
+point_count = 5
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[sub_resource type="Curve" id="Curve_bpdc2"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 23.9434, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), -2.60788, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[node name="AffectionParticles" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_pnby3")
+script = ExtResource("2_thlr3")
+launchSpeed = 100.0
+gravity = 98.0
+maxFallSpeed = 90.0
+maxLifeTime = 2.0
+horizontalDampening = 80.0
+wiggleCurve = SubResource("Curve_5ijpr")
+alphaCurve = SubResource("Curve_bpdc2")

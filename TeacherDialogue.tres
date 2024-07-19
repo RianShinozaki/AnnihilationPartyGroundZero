@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://rqra4wnso0mc"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_cblvd"]
+
+[resource]
+script = ExtResource("1_cblvd")
+starts = {
+"intro": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-1995.16, -942.727),
+"start_id": "intro"
+},
+"1_1": {
+"dialogue": "*You see an adult surrounded by young children. The oldest of them can't be much more than 9 years old.",
+"offset": Vector2(-1800, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_2": {
+"dialogue": "*Their faces are dirty, their clothes old, and their knees scraped. Despite this, shining smiles beam toward the adult in the center.",
+"offset": Vector2(-1480, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_3": {
+"dialogue": "*The teacher smiles down on them in turn.",
+"offset": Vector2(-1160, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_4": {
+"dialogue": "*As you approach, the Teacher suddenly turns to you. ",
+"offset": Vector2(-840, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(323.958, 315.5),
+"speaker": ""
+},
+"1_5": {
+"dialogue": "Peanits",
+"offset": Vector2(-495.08, -970.56),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275.5),
+"speaker": ""
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""

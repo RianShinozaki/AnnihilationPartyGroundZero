@@ -1,11 +1,488 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7ciicikyr5s2"]
+[gd_scene load_steps=21 format=3 uid="uid://c7ciicikyr5s2"]
 
-[ext_resource type="Texture2D" uid="uid://c0b7dxgbx0mt4" path="res://Art Assets/Board.png" id="1_46h16"]
+[ext_resource type="Script" path="res://Scripts/Scenes/BoardController.cs" id="1_b48xn"]
+[ext_resource type="Shader" path="res://Shaders/splitScreen.gdshader" id="1_hhqnp"]
+[ext_resource type="Texture2D" uid="uid://cddyh0r6g2vn0" path="res://Art Assets/Scenes/Office/DetectiveBoard.png" id="3_fi6os"]
+[ext_resource type="Texture2D" uid="uid://bdqyt15tayar5" path="res://Art Assets/Scenes/Office/TeacherZoomIn.png" id="3_iyw3a"]
+[ext_resource type="Texture2D" uid="uid://coifmewqp2v21" path="res://Art Assets/Scenes/Office/DetectiveTable.png" id="4_ahjda"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_gc7ut"]
 [ext_resource type="Script" path="res://Scripts/Objects/Environment/SuspectPhoto.cs" id="4_gcqtr"]
-[ext_resource type="Texture2D" uid="uid://evexanvo4noa" path="res://Art Assets/FrameHelper.png" id="5_e8pn7"]
-[ext_resource type="Texture2D" uid="uid://uj1nro4j7ujp" path="res://Art Assets/ReturnArrow.png" id="5_gxrli"]
+[ext_resource type="Texture2D" uid="uid://evexanvo4noa" path="res://Art Assets/Old/FrameHelper.png" id="5_e8pn7"]
+[ext_resource type="Texture2D" uid="uid://uj1nro4j7ujp" path="res://Art Assets/Old/ReturnArrow.png" id="5_gxrli"]
+[ext_resource type="Texture2D" uid="uid://081fpvl68b4h" path="res://Art Assets/Scenes/Office/DetectiveBack.png" id="5_ndh3p"]
 [ext_resource type="Theme" uid="uid://1jok35302t31" path="res://Font/UI.tres" id="5_u30ba"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o34bw"]
+viewport_path = NodePath("CloseUpView")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bx213"]
+viewport_path = NodePath("BoardView")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dylt"]
+resource_local_to_scene = true
+shader = ExtResource("1_hhqnp")
+shader_parameter/viewport_size = Vector2(1280, 720)
+shader_parameter/split_line_thickness = 5.0
+shader_parameter/split_line_color = Vector4(1, 0, 1, 1)
+shader_parameter/split_slope = 2.9
+shader_parameter/split_origin = Vector2(1.2, 0.5)
+shader_parameter/viewport1 = SubResource("ViewportTexture_o34bw")
+shader_parameter/viewport2 = SubResource("ViewportTexture_bx213")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_731ix"]
+
+[sub_resource type="Animation" id="Animation_rwhaa"]
+resource_name = "Establish"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Board:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(640, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Board:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Board:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.575, -0.25, 0, 0.2, -0.0125772, 0.5, -0.9, 0.00472826, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Board:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.575, -0.25, 0, 0.2, -0.017459, 0.5, -0.8, 0.00206548, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Detective:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.1, 0.0220367, 0.6, -1.2, -0.0011853, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Detective:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.1, 0.0428954, 0.6, -0.9, 0.00103372, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Table:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.1, 0.0255871, 0.56, -0.7, 0.00109142, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Table:scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.1, 0.0224804, 0.56, -0.8, -0.0011276, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Board:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.568627, -0.1, -0.077012, 0.1, 0.0759854, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.5)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Board:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.294118, -0.3, -0.169696, 0.2, 0.14067, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.5)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Board:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.290196, -0.3, -0.165774, 0.2, 0.162077, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.5)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Board:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.5)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Detective:modulate:r")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.576471, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Detective:modulate:g")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.439216, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Detective:modulate:b")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.639216, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Detective:modulate:a")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Table:modulate:r")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Table:modulate:g")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Table:modulate:b")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Table:modulate:a")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_l7mh7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Board:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Board:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Board:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Board:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Detective:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Detective:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Table:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Table:scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Board:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Board:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Board:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Board:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Detective:modulate:r")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Detective:modulate:g")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Detective:modulate:b")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Detective:modulate:a")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Table:modulate:r")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Table:modulate:g")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Table:modulate:b")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Table:modulate:a")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nwm3x"]
+_data = {
+"Establish": SubResource("Animation_rwhaa"),
+"RESET": SubResource("Animation_l7mh7")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgn2v"]
 size = Vector2(180, 140)
@@ -14,12 +491,49 @@ size = Vector2(180, 140)
 size = Vector2(82, 98)
 
 [node name="Board" type="Node2D"]
+script = ExtResource("1_b48xn")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_4dylt")
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("PlaceholderTexture2D_731ix")
+
+[node name="BoardView" type="SubViewport" parent="."]
+size = Vector2i(1280, 720)
+
+[node name="Board" type="Sprite2D" parent="BoardView"]
 texture_filter = 1
 position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_46h16")
+texture = ExtResource("3_fi6os")
+
+[node name="Table" type="Sprite2D" parent="BoardView"]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ahjda")
+
+[node name="Detective" type="Sprite2D" parent="BoardView"]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ndh3p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoardView"]
+libraries = {
+"": SubResource("AnimationLibrary_nwm3x")
+}
+autoplay = "Establish"
+
+[node name="CloseUpView" type="SubViewport" parent="."]
+size = Vector2i(1280, 720)
+
+[node name="Background" type="Sprite2D" parent="CloseUpView"]
+texture_filter = 1
+position = Vector2(-500, -100)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("3_iyw3a")
 centered = false
 
 [node name="Frame" type="Sprite2D" parent="."]
@@ -59,20 +573,19 @@ theme_override_constants/outline_size = 13
 text = "RETURN"
 
 [node name="TeacherPhoto" type="Area2D" parent="."]
-position = Vector2(-183, 127)
+position = Vector2(446, 128)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_gcqtr")
 myLocation = 2
-goToScene = "res://Scenes/teacher.tscn"
+goToScene = "res://Scenes/teacherNewTest.tscn"
 tooltip = "Teacher"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeacherPhoto"]
-position = Vector2(559, 169)
 shape = SubResource("RectangleShape2D_pn217")
 
 [node name="EngineerPhoto" type="Area2D" parent="."]
-position = Vector2(-65, 292)
+position = Vector2(884, 153)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_gcqtr")
@@ -81,10 +594,10 @@ goToScene = "res://Scenes/engineer.tscn"
 tooltip = "Engineer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EngineerPhoto"]
-position = Vector2(559, 169)
 shape = SubResource("RectangleShape2D_pn217")
 
 [node name="ButcherPhoto" type="Area2D" parent="."]
+position = Vector2(875, 387)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_gcqtr")
@@ -93,10 +606,10 @@ goToScene = "res://Scenes/butcher.tscn"
 tooltip = "Butcher"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButcherPhoto"]
-position = Vector2(559, 169)
 shape = SubResource("RectangleShape2D_pn217")
 
 [node name="OccultistPhoto" type="Area2D" parent="."]
+position = Vector2(379, 381)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_gcqtr")
@@ -105,7 +618,6 @@ goToScene = "res://Scenes/occultist.tscn"
 tooltip = "Occultist"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OccultistPhoto"]
-position = Vector2(790, 247)
 shape = SubResource("RectangleShape2D_pn217")
 
 [node name="Pointer" parent="." instance=ExtResource("4_gc7ut")]

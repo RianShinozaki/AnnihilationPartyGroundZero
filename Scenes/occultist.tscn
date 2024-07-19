@@ -1,12 +1,13 @@
 [gd_scene load_steps=21 format=3 uid="uid://dpcj6th1adiv2"]
 
-[ext_resource type="Texture2D" uid="uid://bgopkn1m52e4b" path="res://Art Assets/OccultBG.png" id="1_4oum7"]
-[ext_resource type="Texture2D" uid="uid://dmxktmfqmlm4c" path="res://Art Assets/OccultNormal.png" id="2_loaw0"]
-[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/!.png" id="3_makk2"]
+[ext_resource type="Texture2D" uid="uid://bgopkn1m52e4b" path="res://Art Assets/Old/OccultBG.png" id="1_4oum7"]
+[ext_resource type="Texture2D" uid="uid://dmxktmfqmlm4c" path="res://Art Assets/Old/OccultNormal.png" id="2_loaw0"]
+[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/Old/!.png" id="3_makk2"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_u8f6n"]
-[ext_resource type="Script" path="res://Scripts/NPC/Occultist.cs" id="5_u6hgs"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Occultist.cs" id="5_u6hgs"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_vueqr"]
 [ext_resource type="Texture2D" uid="uid://b6eemq2ygb2mk" path="res://addons/kenney_particle_pack/smoke_04.png" id="7_ig0e6"]
+[ext_resource type="Texture2D" uid="uid://eu01wnbgadcs" path="res://Art Assets/Scenes/Occultist/OccultistWIP.png" id="8_2sui0"]
 
 [sub_resource type="Animation" id="Animation_vb4fs"]
 resource_name = "Intro"
@@ -161,15 +162,6 @@ color = Color(0.67451, 0.968627, 1, 0.117647)
 color_ramp = SubResource("GradientTexture1D_mom8e")
 turbulence_enabled = true
 
-[sub_resource type="Environment" id="Environment_472lp"]
-background_mode = 3
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 0.15
-glow_strength = 1.21
-glow_bloom = 0.28
-glow_blend_mode = 0
-
 [node name="Occultist" type="Node2D"]
 position = Vector2(-1.52588e-05, 0)
 
@@ -179,6 +171,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4oum7")
 
 [node name="Character" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-33, -4)
 scale = Vector2(0.5, 0.5)
@@ -222,6 +215,11 @@ position = Vector2(626.5, 367.75)
 scale = Vector2(5.89453, 736.5)
 texture = SubResource("GradientTexture1D_fwl2y")
 
+[node name="OccultistWip" type="Sprite2D" parent="."]
+position = Vector2(619, 379)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_2sui0")
+
 [node name="Speaker" type="Control" parent="." node_paths=PackedStringArray("NPCSprite", "animPlayer", "tempObscure")]
 layout_mode = 3
 anchors_preset = 0
@@ -250,6 +248,3 @@ amount = 25
 process_material = SubResource("ParticleProcessMaterial_kkdhj")
 texture = ExtResource("7_ig0e6")
 lifetime = 7.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_472lp")

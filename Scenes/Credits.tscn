@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2ctbld223bw4"]
 
-[ext_resource type="Texture2D" uid="uid://bdrvmqu0jwm7q" path="res://Art Assets/Untitled_Artwork.png" id="1_jj0kx"]
-[ext_resource type="Texture2D" uid="uid://cn6en2036q0v8" path="res://Art Assets/Creds.png" id="2_uvrg0"]
+[ext_resource type="Texture2D" uid="uid://bdrvmqu0jwm7q" path="res://Art Assets/Old/Untitled_Artwork.png" id="1_jj0kx"]
+[ext_resource type="Texture2D" uid="uid://cn6en2036q0v8" path="res://Art Assets/Old/Creds.png" id="2_uvrg0"]
 
 [sub_resource type="Gradient" id="Gradient_t57cv"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)

@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://ctasrud4l0rp2"]
 
-[ext_resource type="Texture2D" uid="uid://dwb5ipa33jn6" path="res://Art Assets/Butcher/DetectiveOffice.png" id="1_sf8br"]
+[ext_resource type="Texture2D" uid="uid://dwb5ipa33jn6" path="res://Art Assets/Old/Butcher/DetectiveOffice.png" id="1_sf8br"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="2_t3on5"]
 [ext_resource type="Script" path="res://Scripts/Objects/Environment/SuspectLogs.cs" id="3_a8yh6"]
 [ext_resource type="AudioStream" uid="uid://blarcj7aue1h8" path="res://Audio/PhoneRing.wav" id="4_agxjk"]
-[ext_resource type="Texture2D" uid="uid://cfhqc3io1feh3" path="res://Art Assets/PaperStackTemp.png" id="4_csh88"]
-[ext_resource type="Texture2D" uid="uid://b8wf0fn3ecbiy" path="res://Art Assets/PhoneTemp.png" id="4_i4m0p"]
-[ext_resource type="Script" path="res://Scripts/NPC/Phone.cs" id="5_d3j0v"]
+[ext_resource type="Texture2D" uid="uid://cfhqc3io1feh3" path="res://Art Assets/Old/PaperStackTemp.png" id="4_csh88"]
+[ext_resource type="Texture2D" uid="uid://b8wf0fn3ecbiy" path="res://Art Assets/Old/PhoneTemp.png" id="4_i4m0p"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Phone.cs" id="5_d3j0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btrvb"]
 size = Vector2(221, 120)
@@ -52,8 +52,8 @@ size = Vector2(121.5, 60.5)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-246, -125)
-scale = Vector2(1.37222, 1.37222)
+position = Vector2(-1818, -674)
+scale = Vector2(3.132, 3.132)
 texture = ExtResource("1_sf8br")
 centered = false
 

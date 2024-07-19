@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ba1yy8uusgfyi"]
 
-[ext_resource type="Texture2D" uid="uid://u3bc0w3epshp" path="res://Art Assets/AnnihilationParty.png" id="1_cbx53"]
+[ext_resource type="Texture2D" uid="uid://u3bc0w3epshp" path="res://Art Assets/Old/AnnihilationParty.png" id="1_cbx53"]
 [ext_resource type="Theme" uid="uid://dab07dflhwun4" path="res://Font/Textbox.tres" id="1_ynm13"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="2_6ufsm"]
 [ext_resource type="Script" path="res://Scripts/UI/StartGameButton.cs" id="3_jnjvs"]

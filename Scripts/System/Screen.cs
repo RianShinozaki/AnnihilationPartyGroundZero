@@ -13,7 +13,7 @@ public partial class Screen : TextureRect
         SplitLine = GetNode<TextureRect>("SplitLine");
         Split2Line = GetNode<TextureRect>("SplitLine2");
         Split3Line = GetNode<TextureRect>("SplitLine3");
-        TimeAndDate = SplitLine.GetNode<Label>("Label");
+        TimeAndDate = GetNode<Label>("DateTime");
         GameController.Instance.SwitchSceneTransitionBegin += OnSwitchScene;
         OnSwitchScene("");
     }
@@ -36,7 +36,7 @@ public partial class Screen : TextureRect
     public void ChangeDateDisplay() {
         string day = GameController.GetDay(GameController.currentDay);
         string time = GameController.currentTime == 0 ? "MORNING" : (GameController.currentTime == 1 ? "EVENING" : "NIGHTFALL");
-        string date = "12    " + GameController.currentDay.ToString("D2");
+        string date = "12 / " + GameController.currentDay.ToString("D2");
         string stringFirst = date + "\n" + day + "\n";
         TimeAndDate.VisibleCharacters = stringFirst.Length;
         TimeAndDate.Text = stringFirst + time;

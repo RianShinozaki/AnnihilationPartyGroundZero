@@ -1,32 +1,42 @@
-[gd_scene load_steps=32 format=3 uid="uid://rc02847t6sxq"]
+[gd_scene load_steps=62 format=3 uid="uid://rc02847t6sxq"]
 
 [ext_resource type="Script" path="res://Scripts/System/Screen.cs" id="1_haiik"]
 [ext_resource type="PackedScene" uid="uid://3tn1o525br5" path="res://Scenes/Investigation.tscn" id="1_lbqt6"]
 [ext_resource type="PackedScene" uid="uid://c7ciicikyr5s2" path="res://Scenes/SuspectBoard.tscn" id="2_n06qh"]
 [ext_resource type="Shader" path="res://Shaders/splitScreen.gdshader" id="3_ggccd"]
-[ext_resource type="Texture2D" uid="uid://cck8feglyg4h4" path="res://Art Assets/Divider2.png" id="6_3h7n4"]
+[ext_resource type="Texture2D" uid="uid://cck8feglyg4h4" path="res://Art Assets/Old/Divider2.png" id="6_3h7n4"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="7_55wed"]
 [ext_resource type="Theme" uid="uid://1jok35302t31" path="res://Font/UI.tres" id="7_s0mlh"]
 [ext_resource type="Script" path="res://Scripts/UI/MoneyLabel.cs" id="8_kdkoj"]
-[ext_resource type="Texture2D" uid="uid://6dc4jhjx5rni" path="res://Art Assets/Backpack.png" id="9_gqsao"]
-[ext_resource type="PackedScene" uid="uid://k8rwx7o3go0e" path="res://Objects/System/Dialogue/textbox_system.tscn" id="10_fyxm3"]
 [ext_resource type="FontFile" uid="uid://or16hm10ws1k" path="res://Font/SignwoodItalic-K74BA.ttf" id="11_qs02f"]
 [ext_resource type="Script" path="res://Scripts/System/Tooltip.cs" id="12_7hf3v"]
 [ext_resource type="Script" path="res://Scripts/UI/SuspectLog.cs" id="13_vpomw"]
-[ext_resource type="Texture2D" uid="uid://d30edjnvo3b60" path="res://Art Assets/LogPaper.png" id="13_who0r"]
+[ext_resource type="Texture2D" uid="uid://d30edjnvo3b60" path="res://Art Assets/Old/LogPaper.png" id="13_who0r"]
 [ext_resource type="FontFile" uid="uid://buu42evyolhg7" path="res://Font/Greybeard-11px.ttf" id="14_5xqi0"]
 [ext_resource type="Theme" uid="uid://qrc8qo2jtbb2" path="res://Font/LogButton.tres" id="15_gfsd2"]
+[ext_resource type="AudioStream" uid="uid://dc34vrr4vg6n6" path="res://Audio/Dangan3TEMP.mp3" id="16_p34kg"]
 [ext_resource type="Script" path="res://Scripts/Debug/DayChange.cs" id="17_bbsds"]
-[ext_resource type="AudioStream" uid="uid://mbte7cc45ii2" path="res://Audio/SeenUnseen.mp3" id="49_jsk3t"]
+[ext_resource type="Script" path="res://Scripts/DialogueBoxBridge.cs" id="21_if3r0"]
+[ext_resource type="Theme" uid="uid://dab07dflhwun4" path="res://Font/Textbox.tres" id="22_k337u"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBoxAP.gd" id="23_enlh3"]
+[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://Data/Dialogue/DialogueNodesTest/TestDialogue.tres" id="24_x76qq"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="25_txm2r"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="26_1ago3"]
+[ext_resource type="Texture2D" uid="uid://g76yv4qmusvv" path="res://Art Assets/UI/WIPSuitcase_Screen.png" id="27_k0ek8"]
+[ext_resource type="Script" path="res://Scripts/UI/Inventory.cs" id="27_mcqn6"]
+[ext_resource type="Texture2D" uid="uid://f2vtt2g54xe1" path="res://Art Assets/UI/WIPSuitcase_Item.png" id="28_bn6jp"]
+[ext_resource type="Texture2D" uid="uid://dlts3fn8fes54" path="res://Art Assets/UI/Ham.png" id="29_teup7"]
+[ext_resource type="Texture2D" uid="uid://b62qclebjgyk8" path="res://Art Assets/UI/WIPSuitcase_Bottom.png" id="30_ridpd"]
+[ext_resource type="Texture2D" uid="uid://tw8gg2lix1bw" path="res://Art Assets/UI/WIPSuitcase_Top.png" id="31_kv6de"]
 [ext_resource type="Script" path="res://Scripts/System/BGMPlayer.cs" id="50_mv3uq"]
-[ext_resource type="Script" path="res://Scripts/NPC/OfficeSpeaker.cs" id="50_um8kk"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/OfficeSpeaker.cs" id="50_um8kk"]
 [ext_resource type="Script" path="res://Scripts/EndSequenceObject.cs" id="59_8wspn"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l607p"]
-viewport_path = NodePath("Control/Investigation/SubViewport")
+viewport_path = NodePath("Scenes/Investigation/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l18a7"]
-viewport_path = NodePath("Control/Board/SubViewport")
+viewport_path = NodePath("Scenes/Board/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j6kpp"]
 resource_local_to_scene = true
@@ -44,15 +54,6 @@ shader_parameter/viewport2 = SubResource("ViewportTexture_l18a7")
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_sguut"]
 gradient = SubResource("Gradient_je7h7")
 
-[sub_resource type="LabelSettings" id="LabelSettings_8qiov"]
-font = ExtResource("7_55wed")
-font_size = 59
-font_color = Color(0, 0.117647, 1, 1)
-outline_size = 8
-shadow_size = 17
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(2, 2)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssc2h"]
 bg_color = Color(0, 1, 0.623529, 1)
 border_width_left = 4
@@ -62,6 +63,15 @@ border_width_bottom = 4
 
 [sub_resource type="Theme" id="Theme_55asv"]
 Panel/styles/panel = SubResource("StyleBoxFlat_ssc2h")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qiov"]
+font = ExtResource("7_55wed")
+font_size = 40
+font_color = Color(0, 0.117647, 1, 1)
+outline_size = 6
+shadow_size = 17
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w50vm"]
 font = ExtResource("11_qs02f")
@@ -74,40 +84,1006 @@ font = ExtResource("14_5xqi0")
 font_size = 22
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_fgm46"]
+script = ExtResource("25_txm2r")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_f8sog"]
+script = ExtResource("26_1ago3")
+
+[sub_resource type="Gradient" id="Gradient_xt26l"]
+colors = PackedColorArray(0, 0, 0, 0.709804, 0, 0, 0.223529, 0.615686)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_th4j3"]
+gradient = SubResource("Gradient_xt26l")
+
+[sub_resource type="Animation" id="Animation_7xwau"]
+resource_name = "Close_Board"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 340, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Top:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Top:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 330, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Screen:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Screen:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Screen:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Screen:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Screen:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Screen:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.28, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Screen:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Screen:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 380, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CloseButton:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s8701"]
+resource_name = "Closed_Board"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(340, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Top:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Top:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(330, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Screen:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Screen:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Screen:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Screen:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Screen:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Screen:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.28, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Screen:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Screen:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(380, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CloseButton:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4qvww"]
+resource_name = "Open_Board"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(340, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Top:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Top:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(330, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Screen:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Screen:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Screen:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Screen:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Screen:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Screen:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.28, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Screen:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Screen:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(380, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CloseButton:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x2w2q"]
+resource_name = "Opened_Board"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_bbx5s"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Top:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Top:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Screen:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Screen:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Screen:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Screen:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Screen:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Screen:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Screen:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Screen:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CloseButton:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wuxri"]
+_data = {
+"Close_Board": SubResource("Animation_7xwau"),
+"Closed_Board": SubResource("Animation_s8701"),
+"Open_Board": SubResource("Animation_4qvww"),
+"Opened_Board": SubResource("Animation_x2w2q"),
+"RESET": SubResource("Animation_bbx5s")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r1tdl"]
+animation = &"Close_Board"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_57od0"]
+animation = &"Closed_Board"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8h766"]
+animation = &"Open_Board"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mkqjb"]
+animation = &"Opened_Board"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iaan4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eea5y"]
+advance_mode = 2
+advance_condition = &"open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6a38o"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qgbjd"]
+advance_mode = 2
+advance_condition = &"closed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_70mcq"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vc8r4"]
+states/Close_Board/node = SubResource("AnimationNodeAnimation_r1tdl")
+states/Close_Board/position = Vector2(581.2, 119.2)
+states/Closed_Board/node = SubResource("AnimationNodeAnimation_57od0")
+states/Closed_Board/position = Vector2(388.8, 99.28)
+states/Open_Board/node = SubResource("AnimationNodeAnimation_8h766")
+states/Open_Board/position = Vector2(482, 19.2)
+states/Opened_Board/node = SubResource("AnimationNodeAnimation_mkqjb")
+states/Opened_Board/position = Vector2(667.6, 16)
+transitions = ["Start", "Closed_Board", SubResource("AnimationNodeStateMachineTransition_iaan4"), "Closed_Board", "Open_Board", SubResource("AnimationNodeStateMachineTransition_eea5y"), "Open_Board", "Opened_Board", SubResource("AnimationNodeStateMachineTransition_6a38o"), "Opened_Board", "Close_Board", SubResource("AnimationNodeStateMachineTransition_qgbjd"), "Close_Board", "Closed_Board", SubResource("AnimationNodeStateMachineTransition_70mcq")]
+graph_offset = Vector2(102, -54)
+
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Control" type="Control" parent="."]
+[node name="Scenes" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Board" type="SubViewportContainer" parent="Control"]
+[node name="Board" type="SubViewportContainer" parent="Scenes"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 
-[node name="SubViewport" type="SubViewport" parent="Control/Board"]
+[node name="SubViewport" type="SubViewport" parent="Scenes/Board"]
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_sort = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="Board" parent="Control/Board/SubViewport" instance=ExtResource("2_n06qh")]
+[node name="Board" parent="Scenes/Board/SubViewport" instance=ExtResource("2_n06qh")]
 
-[node name="Investigation" type="SubViewportContainer" parent="Control"]
+[node name="Investigation" type="SubViewportContainer" parent="Scenes"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 
-[node name="SubViewport" type="SubViewport" parent="Control/Investigation"]
+[node name="SubViewport" type="SubViewport" parent="Scenes/Investigation"]
 own_world_3d = true
 handle_input_locally = false
 physics_object_picking = true
@@ -115,7 +1091,7 @@ physics_object_picking_sort = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="Investigation" parent="Control/Investigation/SubViewport" instance=ExtResource("1_lbqt6")]
+[node name="Investigation" parent="Scenes/Investigation/SubViewport" instance=ExtResource("1_lbqt6")]
 
 [node name="Screen" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_j6kpp")
@@ -180,19 +1156,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("6_3h7n4")
 
-[node name="Label" type="Label" parent="Screen/SplitLine"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 235.0
-offset_top = 20.0
-offset_right = 608.0
-offset_bottom = 161.0
-text = "12    01
-FRIDAY
-Morning
-"
-label_settings = SubResource("LabelSettings_8qiov")
-
 [node name="Money" type="Panel" parent="Screen"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -222,15 +1185,19 @@ theme_override_constants/outline_size = 10
 text = "$100.00"
 script = ExtResource("8_kdkoj")
 
-[node name="TextureRect" type="TextureRect" parent="Screen"]
-visible = false
+[node name="DateTime" type="Label" parent="Screen"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 4.0
-offset_top = 514.0
-offset_right = 260.0
-offset_bottom = 770.0
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("9_gqsao")
+offset_left = 859.0
+offset_top = 40.0
+offset_right = 1232.0
+offset_bottom = 253.0
+text = "12 / 01
+FRIDAY 
+Morning
+"
+label_settings = SubResource("LabelSettings_8qiov")
+horizontal_alignment = 2
 
 [node name="Tooltip" type="Label" parent="."]
 texture_filter = 1
@@ -348,6 +1315,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "PREVIOUS DAY"
 
 [node name="DAYUP" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1075.0
 offset_top = 9.0
@@ -370,6 +1338,7 @@ script = ExtResource("17_bbsds")
 val = 30
 
 [node name="DAYDOWN" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1075.0
 offset_top = 60.0
@@ -379,12 +1348,8 @@ text = "Day -1"
 script = ExtResource("17_bbsds")
 val = -1
 
-[node name="TextboxSystem" parent="." instance=ExtResource("10_fyxm3")]
-visible = false
-z_index = 0
-
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("49_jsk3t")
+stream = ExtResource("16_p34kg")
 script = ExtResource("50_mv3uq")
 
 [node name="OfficeSpeaker" type="Control" parent="."]
@@ -395,9 +1360,140 @@ offset_right = -330.0
 offset_bottom = 72.0
 script = ExtResource("50_um8kk")
 
-[node name="Node" type="Node" parent="."]
+[node name="EndingEvent" type="Node" parent="."]
 script = ExtResource("59_8wspn")
 goToScene = "res://Scenes/Ending.tscn"
+
+[node name="DialogueSystem" type="Node" parent="."]
+script = ExtResource("21_if3r0")
+
+[node name="DialogueBoxAP" type="Panel" parent="DialogueSystem"]
+visible = false
+custom_minimum_size = Vector2(256, 128)
+offset_left = 240.0
+offset_top = 496.0
+offset_right = 1040.0
+offset_bottom = 680.0
+theme = ExtResource("22_k337u")
+script = ExtResource("23_enlh3")
+dialogue_data = ExtResource("24_x76qq")
+max_options = 7
+options_vertical = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_fgm46"), SubResource("RichTextEffect_f8sog")])
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 56.0
+offset_bottom = 59.9999
+scale = Vector2(0.5, 0.5)
+script = ExtResource("27_mcqn6")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3000.0
+offset_top = -1000.0
+offset_right = 4600.0
+offset_bottom = 1560.0
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture1D_th4j3")
+
+[node name="Screen" type="TextureRect" parent="Inventory"]
+layout_mode = 0
+offset_right = 389.0
+offset_bottom = 634.0
+scale = Vector2(0.9, 1)
+texture = ExtResource("27_k0ek8")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory/Screen"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 189.0
+offset_right = 337.0
+offset_bottom = 472.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Screen/ScrollContainer"]
+layout_mode = 2
+
+[node name="Item" type="TextureRect" parent="Inventory/Screen/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("28_bn6jp")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Screen/ScrollContainer/VBoxContainer/Item"]
+layout_mode = 0
+offset_left = 9.34
+offset_top = 8.715
+offset_right = 109.34
+offset_bottom = 68.715
+texture = ExtResource("29_teup7")
+
+[node name="Label" type="Label" parent="Inventory/Screen/ScrollContainer/VBoxContainer/Item"]
+layout_mode = 0
+offset_left = 121.615
+offset_top = 9.105
+offset_right = 161.615
+offset_bottom = 32.105
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_s0mlh")
+theme_override_colors/font_color = Color(0.117647, 0.2, 0.498039, 1)
+text = "ITEM"
+
+[node name="Label2" type="Label" parent="Inventory/Screen/ScrollContainer/VBoxContainer/Item"]
+layout_mode = 0
+offset_left = 121.615
+offset_top = 28.155
+offset_right = 277.615
+offset_bottom = 55.155
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("22_k337u")
+theme_override_colors/font_color = Color(0.117647, 0.2, 0.498039, 1)
+text = "Description"
+
+[node name="Bottom" type="TextureRect" parent="Inventory"]
+layout_mode = 0
+offset_right = 389.0
+offset_bottom = 634.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("30_ridpd")
+
+[node name="Top" type="TextureRect" parent="Inventory"]
+layout_mode = 0
+offset_right = 389.001
+offset_bottom = 634.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("31_kv6de")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inventory"]
+libraries = {
+"": SubResource("AnimationLibrary_wuxri")
+}
+autoplay = "Closed_Board"
+
+[node name="AnimationTree" type="AnimationTree" parent="Inventory"]
+libraries = {
+"": SubResource("AnimationLibrary_wuxri")
+}
+tree_root = SubResource("AnimationNodeStateMachine_vc8r4")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/closed = false
+parameters/conditions/open = false
+
+[node name="CloseButton" type="Button" parent="Inventory"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 72.0
+offset_right = 326.0
+offset_bottom = 116.0
+text = "X"
+
+[node name="Button" type="Button" parent="Inventory"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 390.0
+offset_right = 350.0
+offset_bottom = 568.0
 
 [connection signal="pressed" from="SuspectLog/CLOSE" to="SuspectLog" method="_on_close_pressed"]
 [connection signal="pressed" from="SuspectLog/NextDay" to="SuspectLog" method="_on_next_day_pressed"]
@@ -405,3 +1501,5 @@ goToScene = "res://Scenes/Ending.tscn"
 [connection signal="pressed" from="DAYUP" to="DAYUP" method="_on_pressed"]
 [connection signal="pressed" from="DAYDOWN2" to="DAYDOWN2" method="_on_pressed"]
 [connection signal="pressed" from="DAYDOWN" to="DAYDOWN" method="_on_pressed"]
+[connection signal="pressed" from="Inventory/CloseButton" to="Inventory" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Inventory/Button" to="Inventory" method="_on_button_pressed"]

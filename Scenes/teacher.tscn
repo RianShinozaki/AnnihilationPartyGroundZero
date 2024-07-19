@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://d07nyld6frr6b"]
 
-[ext_resource type="Texture2D" uid="uid://btkjvcrrg1lgq" path="res://Art Assets/ShelterBG.png" id="1_wnp2o"]
+[ext_resource type="Texture2D" uid="uid://btkjvcrrg1lgq" path="res://Art Assets/Old/ShelterBG.png" id="1_wnp2o"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="2_1koyp"]
-[ext_resource type="Texture2D" uid="uid://cg1lkrc6f3dq" path="res://Art Assets/TeacherNormal.png" id="2_km8sb"]
-[ext_resource type="Script" path="res://Scripts/NPC/Teacher.cs" id="4_ed6ps"]
-[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/!.png" id="5_jj802"]
+[ext_resource type="Texture2D" uid="uid://cg1lkrc6f3dq" path="res://Art Assets/Old/TeacherNormal.png" id="2_km8sb"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Teacher.cs" id="4_ed6ps"]
+[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/Old/!.png" id="5_jj802"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_wxjdi"]
 
 [sub_resource type="Animation" id="Animation_vb4fs"]

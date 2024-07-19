@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://k8rwx7o3go0e"]
 
-[ext_resource type="Texture2D" uid="uid://c5fk27f4oevx1" path="res://Art Assets/Textbox.png" id="1_86u3a"]
+[ext_resource type="Texture2D" uid="uid://c5fk27f4oevx1" path="res://Art Assets/Old/Textbox.png" id="1_86u3a"]
 [ext_resource type="Script" path="res://Scripts/System/textbox_system.cs" id="1_y2i8b"]
 [ext_resource type="PackedScene" uid="uid://bstrfkdu5ivds" path="res://Objects/System/Dialogue/response.tscn" id="2_8t2sx"]
 [ext_resource type="Theme" uid="uid://dab07dflhwun4" path="res://Font/Textbox.tres" id="2_n4sfx"]

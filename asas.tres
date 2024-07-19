@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://d5ygcnj66cgj"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ffsmt"]
+
+[resource]
+script = ExtResource("1_ffsmt")
+starts = {}
+nodes = {
+"0_1": {
+"link": "END",
+"offset": Vector2(543, 166),
+"start_id": ""
+},
+"4_1": {
+"link": "END",
+"offset": Vector2(466, 264.5),
+"type": 0,
+"value": "",
+"variable": ""
+},
+"5_1": {
+"false": "END",
+"offset": Vector2(143, 200.5),
+"operator": -1,
+"true": "END",
+"value1": "",
+"value2": ""
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String](["5_1", "0_1", "4_1"])
+characters = ""

@@ -1,0 +1,923 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://sv6pcxvjph0n"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_s1rul"]
+
+[resource]
+script = ExtResource("1_s1rul")
+starts = {
+"absent": &"0_3",
+"intro": &"0_2",
+"normal": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_3",
+"offset": Vector2(-1620, -260),
+"start_id": "normal"
+},
+"0_2": {
+"link": &"1_34",
+"offset": Vector2(-1728, -704),
+"start_id": "intro"
+},
+"0_3": {
+"link": &"1_35",
+"offset": Vector2(-1728, -1056),
+"start_id": "absent"
+},
+"1_1": {
+"dialogue": "Hi! It's good to see you again.",
+"offset": Vector2(-512, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 316.5),
+"speaker": 1
+},
+"1_10": {
+"dialogue": "\"I’ve always worked with kids, though. I was a teacher still, long before this.",
+"offset": Vector2(2080, 352),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_11": {
+"dialogue": "",
+"offset": Vector2(2336, -192),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "\"If life is calling, I think my ringer must be off…\","
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "\"Sure. I’ve got a calling, too.\","
+}
+},
+"size": Vector2(300, 356.501),
+"speaker": 1
+},
+"1_12": {
+"dialogue": "\"Right! So, once you know your calling, the rest couldn’t be easier.\",",
+"offset": Vector2(3008, 256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "\"Oh no!\",",
+"offset": Vector2(2656, -224),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_14": {
+"dialogue": "\"*The Teacher is look at you with a kind of concern they reserve for the kids…\",",
+"offset": Vector2(3040, -192),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.004, 311.5),
+"speaker": 0
+},
+"1_15": {
+"dialogue": "\"Don’t worry about it… It can take time to figure it out!\",",
+"offset": Vector2(3392, -160),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 311.5),
+"speaker": 0
+},
+"1_16": {
+"dialogue": "\"It was easy for me to find mine… I had seven younger siblings, you see.\",",
+"offset": Vector2(3808, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_17": {
+"dialogue": "\"I even dropped out of school to care for the youngest of my siblings. I would’ve had a difficult time finding work either way.\",",
+"offset": Vector2(4160, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 316.5),
+"speaker": 1
+},
+"1_18": {
+"dialogue": "\"But I never questioned if it was worth it. When I didn’t have to take care of my siblings anymore, I just moved on to caring for other kids.\",",
+"offset": Vector2(4480, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "\"Your parents?\","
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "\"It must have been difficult, doing all that.\","
+}
+},
+"size": Vector2(300, 356.501),
+"speaker": 1
+},
+"1_19": {
+"dialogue": "\"*The Teacher snorts, derisively.\",",
+"offset": Vector2(5088, -96),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 316.5),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "*They turn to you.",
+"offset": Vector2(-832, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_20": {
+"dialogue": "\"Often it was, yes…\",",
+"offset": Vector2(5152, 352),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_21": {
+"dialogue": "\"*The Teacher appreciates your empathy.\",",
+"offset": Vector2(5504, 352),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_22": {
+"dialogue": "\"My parents weren’t around much.\",",
+"offset": Vector2(5952, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 316.5),
+"speaker": 1
+},
+"1_23": {
+"dialogue": "\"Could you imagine that? Having eight children and just… leaving them to their own devices?\",",
+"offset": Vector2(6336, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_24": {
+"dialogue": "\"When they were home, they were more focused on their fights with each other than meeting the needs of my siblings.\",",
+"offset": Vector2(6720, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 316.5),
+"speaker": 1
+},
+"1_25": {
+"dialogue": "\"One day they didn’t come home at all.\",",
+"offset": Vector2(7072, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 316.5),
+"speaker": 1
+},
+"1_26": {
+"dialogue": "\"*The Teacher sighs sadly.\",",
+"offset": Vector2(7392, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 316.5),
+"speaker": 1
+},
+"1_27": {
+"dialogue": "\"Children deserve better.\",",
+"offset": Vector2(7712, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(377.896, 316.5),
+"speaker": 1
+},
+"1_28": {
+"dialogue": "\"I’m glad someone like you understands that, too.\",",
+"offset": Vector2(8160, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 316.5),
+"speaker": 1
+},
+"1_29": {
+"dialogue": "...",
+"offset": Vector2(8480, 64),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "*You find the Teacher surrounded by smiling faces, as usual.",
+"offset": Vector2(-1152, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": -1
+},
+"1_30": {
+"dialogue": "*You and the teacher didn't grow much closer today...",
+"offset": Vector2(9120, -160),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 311.5),
+"speaker": 0
+},
+"1_31": {
+"dialogue": "*You think you grew a little closer to the Teacher today.\"",
+"offset": Vector2(9440, -32),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 311.5),
+"speaker": 0
+},
+"1_32": {
+"dialogue": "*The Teacher definitely trusts you more after today.",
+"offset": Vector2(9440, 320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 316.5),
+"speaker": 1
+},
+"1_33": {
+"dialogue": "*The two of you sit in silence.
+*Now's a good time to get to know them better.",
+"offset": Vector2(960, 224),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 311.5),
+"speaker": 0
+},
+"1_34": {
+"dialogue": "*You see an adult surrounded by young children. The oldest of them can't be much more than 9 years old.",
+"offset": Vector2(-1472, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_35": {
+"dialogue": "...",
+"offset": Vector2(-1472, -1056),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_36": {
+"dialogue": "*The Teacher isn't here.",
+"offset": Vector2(-1152, -1056),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_37": {
+"dialogue": "*Many pairs of eyes are looking at you... Time to go back.",
+"offset": Vector2(-832, -1056),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_38": {
+"dialogue": "*Their faces are dirty, their clothes old, and their knees scraped. Despite this, shining smiles look toward the adult in the center.",
+"offset": Vector2(-1152, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_39",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_39": {
+"dialogue": "*The teacher beams down at them in turn.",
+"offset": Vector2(-832, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_40",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "There's a lot I could use your help with today...",
+"offset": Vector2(-192, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_40": {
+"dialogue": "*As you approach, the Teacher suddenly turns to you. Unmistakably guarded but still smiling brightly, the Teacher steps between you and the children and prepares their usual greeting.",
+"offset": Vector2(-512, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_41",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_41": {
+"dialogue": "...",
+"offset": Vector2(-192, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_42": {
+"dialogue": "Ah, what have we here? Welcome to the Unobhel House Refugee Center!",
+"offset": Vector2(128, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_43",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_43": {
+"dialogue": "",
+"offset": Vector2(448, -704),
+"options": {
+0: {
+"condition": {},
+"link": &"1_44",
+"text": "What is this place?"
+},
+1: {
+"condition": {},
+"link": &"1_47",
+"text": "Lots of kids here..."
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "I'd like to join the volunteer effort."
+}
+},
+"size": Vector2(300, 391.5),
+"speaker": -1
+},
+"1_44": {
+"dialogue": "Well, we're one of the many branches of the Unobhel House Refugee Center.",
+"offset": Vector2(800, -1344),
+"options": {
+0: {
+"condition": {},
+"link": &"1_45",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_45": {
+"dialogue": "Built from an old armory, actually. Explains all the big towers and such. Haha...",
+"offset": Vector2(1120, -1344),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_46": {
+"dialogue": "\"Um. But thanks to the efforts of the Department for Children and our gracious volunteers, we've been able to support many refugee children here.",
+"offset": Vector2(1440, -1344),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_47": {
+"dialogue": "Yes, well... it is a shelter.",
+"offset": Vector2(800, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_48",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_48": {
+"dialogue": "Most of them are refugees from the war on Colony Theta-68.",
+"offset": Vector2(1120, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_49",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_49": {
+"dialogue": "...",
+"offset": Vector2(1440, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_50",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "*You spend the morning helping the Teacher around the center.",
+"offset": Vector2(128, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(301.129, 311.5),
+"speaker": -1
+},
+"1_50": {
+"dialogue": "They're all good kids. I promise.",
+"offset": Vector2(1760, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_51",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_51": {
+"dialogue": "I know some people have reservations... um...",
+"offset": Vector2(2080, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_52",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_52": {
+"dialogue": "But every child deserves a home.",
+"offset": Vector2(2400, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_53",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_53": {
+"dialogue": "...",
+"offset": Vector2(2720, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_54": {
+"dialogue": "Do you have children of your own?",
+"offset": Vector2(3040, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_55",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"1_55": {
+"dialogue": "",
+"offset": Vector2(3360, -960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_56",
+"text": "Yes."
+},
+1: {
+"condition": {},
+"link": &"1_58",
+"text": "Never did."
+}
+},
+"size": Vector2(300, 356.5),
+"speaker": 1
+},
+"1_56": {
+"dialogue": "*...There's an odd flicker behind the Teacher's eyes.",
+"offset": Vector2(3680, -1088),
+"options": {
+0: {
+"condition": {},
+"link": &"1_57",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_57": {
+"dialogue": "We get lots of empty nesters here, haha... some folks are really in the parenting business for life!",
+"offset": Vector2(4000, -1088),
+"options": {
+0: {
+"condition": {},
+"link": &"1_59",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_58": {
+"dialogue": "",
+"offset": Vector2(3680, -768),
+"options": {
+0: {
+"condition": {},
+"link": &"1_61",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_59": {
+"dialogue": "I mean -- not to presume...",
+"offset": Vector2(4320, -1088),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_6": {
+"dialogue": "...",
+"offset": Vector2(448, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_60": {
+"dialogue": "Well, in either case... are you considering being a volunteer? We could use someone with the experience.",
+"offset": Vector2(4640, -1088),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_61": {
+"dialogue": "",
+"offset": Vector2(4000, -768),
+"options": {
+0: {
+"condition": {},
+"link": &"1_62",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_62": {
+"dialogue": "",
+"offset": Vector2(4320, -768),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_63": {
+"dialogue": "\"It’s, well, my life’s calling. Do you know what I mean?",
+"offset": Vector2(1993.46, -353.133),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 315.5),
+"speaker": ""
+},
+"1_7": {
+"dialogue": "*Before you know it, it's  noon. You and the Teacher take a [ghost] moment [/ghost] for some lunch.",
+"offset": Vector2(416, 192),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 311.5),
+"speaker": 0
+},
+"1_8": {
+"dialogue": "",
+"offset": Vector2(1600, -256),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "How long have you been working here?"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "*Make light conversation with lunch."
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "By the way, I've got some food to donate..."
+},
+3: {
+"condition": {},
+"link": "END",
+"text": "What do you think about the Department for Children?"
+}
+},
+"size": Vector2(300, 431.5),
+"speaker": 0
+},
+"1_9": {
+"dialogue": "Well … must be around 5 years now.",
+"offset": Vector2(1760, 352),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 316.5),
+"speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(2720, 256),
+"signalValue": "trustPlus"
+},
+"3_2": {
+"link": "END",
+"offset": Vector2(4896, 384),
+"signalValue": "trustPlus"
+},
+"5_1": {
+"false": "END",
+"offset": Vector2(8800, 64),
+"operator": 0,
+"true": "END",
+"value1": "trust",
+"value2": "0"
+},
+"5_2": {
+"false": "END",
+"offset": Vector2(9120, 192),
+"operator": 5,
+"true": "END",
+"value1": "trust",
+"value2": "0.5"
+}
+}
+variables = {
+"trust": {
+"type": 3,
+"value": 0.0
+}
+}
+comments = Array[String]([])
+strays = Array[String](["1_9", "1_10", "1_63", "1_11", "1_13", "1_14", "1_15", "1_16", "1_17", "1_18", "1_19", "1_22", "1_23", "1_24", "1_25", "1_26", "1_27", "1_28", "1_29", "5_1", "1_30", "5_2", "1_31", "1_32", "3_2", "1_20", "1_21", "3_1", "1_12", "1_8", "1_6", "1_5", "1_4", "1_1", "1_2", "1_33", "1_7"])
+characters = "res://Data/Dialogue/DialogueNodesTest/Characters.tres"

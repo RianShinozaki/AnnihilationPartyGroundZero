@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dkd0crjuwbxca"]
 
-[ext_resource type="Texture2D" uid="uid://ce52ltiovswav" path="res://Art Assets/Butcher/ButcherBG.png" id="1_5pj2x"]
-[ext_resource type="Texture2D" uid="uid://d0quw6728wush" path="res://Art Assets/Butcher/ButcherAway.png" id="1_h515x"]
+[ext_resource type="Texture2D" uid="uid://ce52ltiovswav" path="res://Art Assets/Old/Butcher/ButcherBG.png" id="1_5pj2x"]
+[ext_resource type="Texture2D" uid="uid://d0quw6728wush" path="res://Art Assets/Old/Butcher/ButcherAway.png" id="1_h515x"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="2_lvhp5"]
-[ext_resource type="Script" path="res://Scripts/NPC/Butcher.cs" id="3_h7qj8"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Butcher.cs" id="3_h7qj8"]
 [ext_resource type="Resource" uid="uid://dt8vb65komejs" path="res://Data/Items/Steak.tres" id="4_1q05i"]
-[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/!.png" id="4_b230j"]
+[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/Old/!.png" id="4_b230j"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_o1ayl"]
 
 [sub_resource type="Animation" id="Animation_vb4fs"]

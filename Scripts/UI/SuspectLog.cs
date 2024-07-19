@@ -79,10 +79,10 @@ public partial class SuspectLog : Control
 
 		}
 		if(currentLogDay == 22) {
-			if(GameController.teacherMemory[5] == 0) {
+			/*if(GameController.teacherMemory[5] == 0) {
 				GameController.teacherMemory[5] = 1;
 				GameController.teacherQuestionFlags[4] = true;
-			}
+			}*/
 
 		}
 		if(currentLogDay == 12) {

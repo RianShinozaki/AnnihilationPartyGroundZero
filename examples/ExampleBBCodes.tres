@@ -15,7 +15,7 @@ nodes = {
 },
 "1_1": {
 "dialogue": "Wanna learn about [u]bbcodes[/u]?",
-"offset": Vector2(220, 0),
+"offset": Vector2(224, 0),
 "options": {
 0: {
 "condition": {},
@@ -28,12 +28,12 @@ nodes = {
 "text": "Nah"
 }
 },
-"size": Vector2(300, 349.5),
+"size": Vector2(300, 355.5),
 "speaker": "Greg"
 },
 "1_2": {
 "dialogue": "[shake]Oh... too bad...[/shake]",
-"offset": Vector2(560, 300),
+"offset": Vector2(640, 384),
 "options": {
 0: {
 "condition": {},
@@ -41,7 +41,7 @@ nodes = {
 "text": "..."
 }
 },
-"size": Vector2(300, 312.5),
+"size": Vector2(300, 315.5),
 "speaker": "Greg"
 },
 "1_3": {
@@ -54,7 +54,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 312.5),
+"size": Vector2(300, 315.5),
 "speaker": "Greg"
 },
 "1_4": {
@@ -67,7 +67,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 312.5),
+"size": Vector2(300, 315.5),
 "speaker": "Greg"
 },
 "1_5": {
@@ -86,7 +86,7 @@ Usage: [effect1] [effect2] text goes here [/effect2] [/effect1]",
 "text": "Got it!"
 }
 },
-"size": Vector2(300, 349.5),
+"size": Vector2(300, 355.5),
 "speaker": "Greg"
 }
 }

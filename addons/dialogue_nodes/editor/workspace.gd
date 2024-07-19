@@ -11,7 +11,8 @@ signal node_deleted(node_name)
 	preload("res://addons/dialogue_nodes/nodes/CommentNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/SignalNode.tscn"),
 	preload("res://addons/dialogue_nodes/nodes/SetNode.tscn"),
-	preload("res://addons/dialogue_nodes/nodes/ConditionNode.tscn")
+	preload("res://addons/dialogue_nodes/nodes/SkillCheckNode.tscn"),
+	#preload("res://addons/dialogue_nodes/nodes/ConditionNode.tscn")
 ]
 
 @onready var files = $SidePanel/Files

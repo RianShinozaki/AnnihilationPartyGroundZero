@@ -1,0 +1,362 @@
+[gd_scene load_steps=17 format=3 uid="uid://ba115335n2c0u"]
+
+[ext_resource type="Texture2D" uid="uid://btkjvcrrg1lgq" path="res://Art Assets/Old/ShelterBG.png" id="1_2y8ls"]
+[ext_resource type="Texture2D" uid="uid://cg1lkrc6f3dq" path="res://Art Assets/Old/TeacherNormal.png" id="2_47xo6"]
+[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/Old/!.png" id="3_socwf"]
+[ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_7usx8"]
+[ext_resource type="Script" path="res://Scripts/NPC/TeacherNPC.cs" id="5_08pt6"]
+[ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_34ery"]
+[ext_resource type="Resource" uid="uid://sv6pcxvjph0n" path="res://Data/Dialogue/DialogueNodesTest/TestDialogue.tres" id="7_lc4ls"]
+[ext_resource type="Script" path="res://Scripts/FX/PooledParticleEmitter.cs" id="8_jiico"]
+[ext_resource type="Texture2D" uid="uid://cqjrmajyn3b3r" path="res://Art Assets/Scenes/Teacher/TeacherWIP.png" id="9_mo385"]
+
+[sub_resource type="Animation" id="Animation_ress6"]
+resource_name = "Establish"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.45, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.45, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(640, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Background2:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 0.52, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Background2:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 0.52, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_vb4fs"]
+resource_name = "Intro"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Speaker")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Init"
+}]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("!/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("!"),
+"times": PackedFloat32Array(0.3)
+}
+
+[sub_resource type="Animation" id="Animation_w4tld"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(640, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Background2:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Background2:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bimlf"]
+_data = {
+"Establish": SubResource("Animation_ress6"),
+"Intro": SubResource("Animation_vb4fs"),
+"RESET": SubResource("Animation_w4tld")
+}
+
+[sub_resource type="Animation" id="Animation_mcn6p"]
+resource_name = "!"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite2D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxmwm"]
+_data = {
+"!": SubResource("Animation_mcn6p")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_1pynv"]
+font = ExtResource("6_34ery")
+font_size = 59
+font_color = Color(0.905882, 0.443137, 1, 1)
+outline_size = 8
+shadow_size = 17
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Office" type="Node2D"]
+position = Vector2(-1.52588e-05, 0)
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(641, 359)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2y8ls")
+
+[node name="Character" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_47xo6")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character"]
+libraries = {
+"": SubResource("AnimationLibrary_bimlf")
+}
+autoplay = "Establish"
+
+[node name="!" type="Node2D" parent="Character"]
+visible = false
+position = Vector2(-30, -530)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Character/!"]
+modulate = Color(0, 0.517647, 0.811765, 1)
+texture = ExtResource("3_socwf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Character/!"]
+modulate = Color(0, 1, 1, 1)
+texture = ExtResource("3_socwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/!"]
+texture = ExtResource("3_socwf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character/!"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_xxmwm")
+}
+
+[node name="Pointer" parent="." instance=ExtResource("4_7usx8")]
+
+[node name="DialogueCaller" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_08pt6")
+
+[node name="Speaker" type="Control" parent="." node_paths=PackedStringArray("NPCSprite", "animPlayer")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_08pt6")
+NPCSprite = NodePath("../Character")
+animPlayer = NodePath("../Character/AnimationPlayer")
+myDialogueResource = ExtResource("7_lc4ls")
+
+[node name="PooledParticleEmitter" type="Node2D" parent="Speaker"]
+position = Vector2(615, 259)
+script = ExtResource("8_jiico")
+_PoolInit = {
+"res://Objects/FX/AffectionParticles.tscn": 16
+}
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 744.0
+offset_top = 9.0
+offset_right = 1263.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.905882, 0.443137, 1, 1)
+text = "REFUGEE SHELTER"
+label_settings = SubResource("LabelSettings_1pynv")
+horizontal_alignment = 2
+
+[node name="TeacherWip" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 357)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_mo385")
+
+[connection signal="animation_finished" from="Character/AnimationPlayer" to="Speaker" method="_on_animation_player_animation_finished"]

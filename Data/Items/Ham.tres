@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c2qkwwtha7xnk"]
+
+[ext_resource type="Texture2D" uid="uid://dlts3fn8fes54" path="res://Art Assets/UI/Ham.png" id="1_skb5n"]
+[ext_resource type="Script" path="res://Data/Items/Item.cs" id="2_c8tlj"]
+
+[resource]
+script = ExtResource("2_c8tlj")
+name = "Ham"
+image = ExtResource("1_skb5n")
+description = "A chunk of nutrient-rich ham"

@@ -59,11 +59,13 @@ public partial class GameController : Node
     
 	public static GameController Instance;
     
-	public static float splitX;
+	[Export] public static float splitX;
 	public static float split2X;
 	public static float split3X;
 	static float wishSplitX;
     public static Speaker theSpeaker;
+    public static DialogueCaller theDialogueCaller;
+    public static DialogueBoxBridge theDialogueBoxBridge;
     public static Location currentLocation;
     public static GameState currentState;
 
@@ -99,10 +101,14 @@ public partial class GameController : Node
     //0 -- marital status
     //1 -- has met :: 0 -- no :: 1 -- yes
 
-    public static short[] teacherMemory = new short[10];
+    //public static short[] teacherMemory = new short[10];
     //0 -- has kids :: 1 -- no :: 2 -- yes
     //1 -- has met :: 0 -- no :: 1 -- yes
     //2 -- worked w/o them :: 0 -- no :: 1 -- yes
+    public static Godot.Collections.Dictionary teacherMemory = new Godot.Collections.Dictionary
+    {
+        {"has_met", false},
+    };
 
     public static short[] engineerMemory = new short[10];
     //0 -- know his fav anime ? :: 0 -- no :: 2 -- yes
@@ -129,11 +135,13 @@ public partial class GameController : Node
     public static bool goodEnding = false;
     public static bool canReturnButtonAppear = false;
 
+    const int INOFFICESPLITX = 400;
+    const int INVESTIGATIONSPLITX = 50;
     public override void _Ready()
     {
         base._Ready();
-        wishSplitX = 215;
-        //GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://MainGame2D.tscn");
+        splitX = INOFFICESPLITX;
+        GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://MainGame2D.tscn");
         Instance = this;
 
         for(int i = 0; i < trustLevels.Length; i++) {
@@ -142,25 +150,24 @@ public partial class GameController : Node
         InitializeNewDay();
 
         money = 200;
+        splitX = INOFFICESPLITX;
+        split2X = INOFFICESPLITX;
+        split3X = INOFFICESPLITX;
     }
     public static void SetSplitX(float x) {
-		wishSplitX = x;
+		splitX = x;
 	}
     public override void _Process(double delta)
     {
         
 
         base._Process(delta);
-		splitX = Mathf.Lerp(splitX, wishSplitX, (float)delta*5);
-		split2X = Mathf.Lerp(split2X, wishSplitX-2, (float)delta*4);
-		split3X = Mathf.Lerp(split3X, wishSplitX-4, (float)delta*3);
+		split2X = Mathf.Lerp(split2X, splitX-2, (float)delta*4);
+		split3X = Mathf.Lerp(split3X, splitX-4, (float)delta*3);
     }
 
     public void DoIntro() {
-        wishSplitX = 600;
-        splitX = 600;
-        split2X = 600;
-        split3X = 600;
+        
         EmitSignal(SignalName.BeginIntroSequence);
     }
 
@@ -171,10 +178,13 @@ public partial class GameController : Node
         }
         
     }
+
+    string toNewScene;
     public void OnSwitchSceneTransitionBegin(string newScene) {
-        EmitSignal(SignalName.SwitchSceneTransitionBegin, newScene);
+        toNewScene = newScene;
+        //EmitSignal(SignalName.SwitchSceneTransitionBegin, newScene);
         if(currentLocation == Location.Office) {
-            wishSplitX = 215;
+            splitX = INOFFICESPLITX;
             currentState = GameState.Office;
             currentTime++;
             if(currentTime > 1) {
@@ -183,9 +193,28 @@ public partial class GameController : Node
                 InitializeNewDay();
             }
         } else {
-            wishSplitX = 50;
-            currentState = GameState.SuspectLocation;
+
+            Tween tween = GetTree().CreateTween();
+            tween.SetTrans(Tween.TransitionType.Sine);
+            Callable callable = new Callable(this, MethodName.SetSplitTween);
+            tween.TweenMethod(callable, INOFFICESPLITX, 175, 0.75f);
+            tween.TweenMethod(callable, 175, 175, 0.75f);
+            tween.TweenCallback(Callable.From(OnSwitchSceneTransitionBeginEnd));
         }
+    }
+    public void OnSwitchSceneTransitionBeginEnd() {
+
+        Tween tween = GetTree().CreateTween();
+        tween.SetTrans(Tween.TransitionType.Quad);
+        Callable callable = new Callable(this, MethodName.SetSplitTween);
+        tween.TweenMethod(callable, 175, INVESTIGATIONSPLITX, 1.5f);
+        
+        currentState = GameState.SuspectLocation;
+
+        EmitSignal(SignalName.SwitchSceneTransitionBegin, toNewScene);
+    }
+    void SetSplitTween(float x) {
+        splitX = x;
     }
     private void InitializeNewDay() {
         todayDateInformation = GD.Load<DateInformation>(logFolder + "/Day" + currentDay.ToString() + ".tres");

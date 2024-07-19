@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cruowte63wvlb"]
 
-[ext_resource type="Texture2D" uid="uid://w0q76ljrg1ow" path="res://Art Assets/Party.png" id="1_tbidl"]
-[ext_resource type="Script" path="res://Scripts/NPC/Ending.cs" id="3_usdhp"]
-[ext_resource type="Script" path="res://Scripts/NPC/EndingAssist.cs" id="4_6vu4e"]
+[ext_resource type="Texture2D" uid="uid://w0q76ljrg1ow" path="res://Art Assets/Old/Party.png" id="1_tbidl"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Ending.cs" id="3_usdhp"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/EndingAssist.cs" id="4_6vu4e"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_awx3b"]
-[ext_resource type="Texture2D" uid="uid://bcyf0pk3peid8" path="res://Art Assets/Butcher/OldDetective.png" id="5_xjorp"]
+[ext_resource type="Texture2D" uid="uid://bcyf0pk3peid8" path="res://Art Assets/Old/Butcher/OldDetective.png" id="5_xjorp"]
 
 [sub_resource type="Animation" id="Animation_5kggh"]
 resource_name = "Appear1"

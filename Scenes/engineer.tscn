@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://bwpku136fy7hs"]
 
-[ext_resource type="Texture2D" uid="uid://c7p80fvi4k6b3" path="res://Art Assets/CafeBG.png" id="1_57wes"]
-[ext_resource type="Texture2D" uid="uid://dmadot45kr2wp" path="res://Art Assets/Engineer.png" id="2_j46s3"]
-[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/!.png" id="3_anv14"]
+[ext_resource type="Texture2D" uid="uid://c7p80fvi4k6b3" path="res://Art Assets/Old/CafeBG.png" id="1_57wes"]
+[ext_resource type="Texture2D" uid="uid://dmadot45kr2wp" path="res://Art Assets/Old/Engineer.png" id="2_j46s3"]
+[ext_resource type="Texture2D" uid="uid://cqwco4aiansp0" path="res://Art Assets/Old/!.png" id="3_anv14"]
 [ext_resource type="PackedScene" uid="uid://bokf3bdem5cn8" path="res://Objects/pointer.tscn" id="4_t6yfe"]
-[ext_resource type="Script" path="res://Scripts/NPC/Engineer.cs" id="5_cgkr7"]
+[ext_resource type="Script" path="res://Scripts/NPC/Old/Engineer.cs" id="5_cgkr7"]
 [ext_resource type="FontFile" uid="uid://81hcxqd8mm4q" path="res://Font/GlitchGoblin-2O87v.ttf" id="6_cnfgh"]
 
 [sub_resource type="Animation" id="Animation_vb4fs"]

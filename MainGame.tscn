@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://cfmxfidj857oq"]
 
-[ext_resource type="Texture2D" uid="uid://npb8bivfwrh1" path="res://Art Assets/DetectiveBoard.png" id="1_2fsyx"]
+[ext_resource type="Texture2D" uid="uid://npb8bivfwrh1" path="res://Art Assets/Old/DetectiveBoard.png" id="1_2fsyx"]
 [ext_resource type="Script" path="res://Scripts/System/GameController.cs" id="1_boi1k"]
-[ext_resource type="Texture2D" uid="uid://dgwfuiv4aeayf" path="res://Art Assets/DetectiveOffice.png" id="2_tx3jc"]
-[ext_resource type="Texture2D" uid="uid://cck8feglyg4h4" path="res://Art Assets/Divider2.png" id="3_ipxs1"]
+[ext_resource type="Texture2D" uid="uid://dgwfuiv4aeayf" path="res://Art Assets/Old/DetectiveOffice.png" id="2_tx3jc"]
+[ext_resource type="Texture2D" uid="uid://cck8feglyg4h4" path="res://Art Assets/Old/Divider2.png" id="3_ipxs1"]
 [ext_resource type="Shader" path="res://Shaders/splitScreen.gdshader" id="3_j1gh7"]
-[ext_resource type="Texture2D" uid="uid://car8d6fmosijm" path="res://Art Assets/Pointer.png" id="4_kjhbg"]
+[ext_resource type="Texture2D" uid="uid://car8d6fmosijm" path="res://Art Assets/Old/Pointer.png" id="4_kjhbg"]
 [ext_resource type="Script" path="res://Scripts/System/Screen.cs" id="6_dgpa3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_fycyq"]

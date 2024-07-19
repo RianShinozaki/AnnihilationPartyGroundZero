@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/InvestigationScene.cs" id="1_o1gyx"]
 [ext_resource type="PackedScene" uid="uid://ctasrud4l0rp2" path="res://Scenes/office.tscn" id="2_wwxdb"]
-[ext_resource type="Texture2D" uid="uid://evexanvo4noa" path="res://Art Assets/FrameHelper.png" id="5_xxw6f"]
+[ext_resource type="Texture2D" uid="uid://evexanvo4noa" path="res://Art Assets/Old/FrameHelper.png" id="5_xxw6f"]
 
 [sub_resource type="Gradient" id="Gradient_xcl6s"]
 colors = PackedColorArray(0, 0, 0, 1, 0.15167, 0.0961784, 0.0760967, 1)

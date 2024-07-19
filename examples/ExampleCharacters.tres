@@ -24,7 +24,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 276),
+"size": Vector2(300, 315.5),
 "speaker": "Gerfg"
 },
 "1_2": {
@@ -37,7 +37,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 275),
+"size": Vector2(300, 316.5),
 "speaker": 0
 },
 "1_3": {
@@ -50,7 +50,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 275),
+"size": Vector2(300, 316.5),
 "speaker": 1
 }
 }
